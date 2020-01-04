@@ -1,0 +1,76 @@
+$red: #dd1d21;
+$red2: #af0811;
+$yellow: #fbce07;
+$yellow2: #faed23;
+$shadow: #801a1f;
+
+$large-size: 1920px;
+$small-laptop: 991px;
+$medium-size: 767px;
+$small-size: 500px;
+$desktop_large: 1600px;
+$desktop_standard: 1200px;
+$tablet_landscape: 992px;
+$tablet_portrait: 768px;
+$mobile_big: 576px;
+$mobile_medium: 426px;
+
+$breakpoints: (
+        "max_width": 1921px,
+        "desktop_large": 1600px,
+        "desktop_standard": 1200px,
+        "tablet_landscape": 992px,
+        "tablet_portrait": 768px,
+        "mobile_big": 576px,
+        "mobile_medium": 426px
+);
+
+
+@mixin mq($width) {
+  @if map_has_key($breakpoints, $width) {
+    $width: map_get($breakpoints, $width);
+    @media only screen and (min-width: $width) {
+      @content;
+    }
+  }
+}
+
+
+@mixin interpolate($properties, $min-screen, $max-screen, $min-value, $max-value) {
+  & {
+    @each $property in $properties {
+      #{$property}: $min-value;
+    }
+
+    @media screen and (min-width: $min-screen) {
+      @each $property in $properties {
+        #{$property}: calc-interpolation($min-screen, $min-value, $max-screen, $max-value);
+      }
+    }
+
+    @media screen and (min-width: $max-screen) {
+      @each $property in $properties {
+        #{$property}: $max-value;
+      }
+    }
+  }
+}
+
+// Requires the calc-interpolation function which can also be used independently
+
+@function calc-interpolation($min-screen, $min-value, $max-screen, $max-value) {
+  $a: ($max-value - $min-value) / ($max-screen - $min-screen);
+  $b: $min-value - $a * $min-screen;
+
+  $sign: "+";
+  @if ($b < 0) {
+    $sign: "-";
+    $b: abs($b);
+  }
+  @return calc(#{$a*100}vw #{$sign} #{$b});
+}
+
+@function get-vh($object) {
+  $vh: (1080 * 0.01) * 1px;
+  @return ($object / $vh) * 1vh;
+}

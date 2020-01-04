@@ -50,7 +50,10 @@
                         <h3>OPIEKUN</h3>
                         <ul class="nav side-menu">
                             <li>
-                                <a href="{{ route('admin.index') }}"><i class="fa fa-home"></i> Strona główna</a>
+                                <a href="{{ route('admin.index') }}"><i class="fa fa-home"></i> Wszystkie zgłoszenia</a>
+                            </li>
+                            <li>
+                                <a href="{{ route('admin.forms') }}"><i class="fa fa-home"></i> Wypełnione formularze</a>
                             </li>
                         </ul>
                     </div>

@@ -1,0 +1,1459 @@
+@import 'mixins';
+
+@font-face {
+  font-family: 'HeinzLabel';
+  src: url('../fonts/HeinzLabel-Regular.eot');
+  src: url('../fonts/HeinzLabel-Regular.eot?#iefix') format('embedded-opentype'),
+    url('../fonts/HeinzLabel-Regular.woff') format('woff'),
+    url('../fonts/HeinzLabel-Regular.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'MyriadPro';
+  src: url('../fonts/MyriadPro-Regular.eot');
+  src: url('../fonts/MyriadPro-Regular.eot?#iefix') format('embedded-opentype'),
+    url('../fonts/MyriadPro-Regular.woff') format('woff'),
+    url('../fonts/MyriadPro-Regular.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'MyriadPro Cond';
+  src: url('../fonts/MyriadPro-Cond.eot');
+  src: url('../fonts/MyriadPro-Cond.eot?#iefix') format('embedded-opentype'),
+    url('../fonts/MyriadPro-Cond.woff') format('woff'),
+    url('../fonts/MyriadPro-Cond.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+
+::-webkit-input-placeholder {
+  /* Chrome/Opera/Safari */
+  color: $red2;
+  text-align: left;
+}
+
+::-moz-placeholder {
+  /* Firefox 19+ */
+  color: $red2;
+}
+
+:-ms-input-placeholder {
+  /* IE 10+ */
+  color: $red2;
+}
+
+:-moz-placeholder {
+  /* Firefox 18- */
+  color: $red2;
+}
+
+input[type="date"]::before {
+  content: attr(data-placeholder);
+  width: 100%;
+  color: $red2;
+}
+
+/* hide our custom/fake placeholder text when in focus to show the default
+ * 'mm/dd/yyyy' value and when valid to show the users' date of birth value.
+ */
+input[type="date"]:focus::before,
+input[type="date"]:valid::before {
+  display: none
+}
+
+html,
+body {
+  font-family: 'HeinzLabel';
+  position: relative;
+
+  @include mq("tablet_landscape") {
+    overflow-x: hidden;
+  }
+
+}
+
+
+.row {
+  margin-left: 0;
+  margin-right: 0;
+
+  @include mq("tablet_landscape") {
+    margin-left: -15px;
+    margin-right: -15px;
+  }
+}
+
+button {
+  outline: none !important;
+}
+
+p,
+a,
+div,
+span {
+  letter-spacing: 0;
+}
+
+a {
+  color: #fff;
+
+  &:hover {
+    color: #fff;
+    text-decoration: none;
+  }
+
+  &:focus {
+    outline: none;
+    outline-offset: none;
+  }
+}
+
+.yellow {
+  color: $yellow;
+}
+
+.white {
+  color: #fff;
+}
+
+strong {
+  font-weight: bold;
+}
+
+p {
+  color: #fff;
+  line-height: 1;
+}
+
+.red-text {
+  color: $red;
+}
+
+.logo-and-title {
+  margin-left: 0;
+
+  h2 {
+    font-size: 2.5em;
+  }
+
+  @include mq("desktop_standard") {
+    margin-left: -10em;
+
+    h2 {
+      font-size: 3em;
+    }
+  }
+
+}
+
+nav {
+
+  height: auto;
+  background: #d31e25;
+
+  @include mq("desktop_standard") {
+
+    background: transparent;
+  }
+
+
+
+  .navbar-nav {
+    width: auto;
+    float: none;
+
+    @include mq("desktop_standard") {
+      max-width: 300px;
+    }
+
+    .nav-item {
+      position: relative;
+
+      a {
+        color: #ffffff !important;
+        line-height: 1;
+        text-align: center;
+        -webkit-transition: all ease-in-out 200ms;
+        /* For Safari 3.1 to 6.0 */
+        transition: all ease-in-out 200ms;
+
+        &:hover {
+          text-decoration: underline;
+        }
+
+        @include mq("tablet_landscape") {
+          font-size: get-vh(24px);
+        }
+
+        @include mq("desktop_standard") {
+          text-align: right;
+        }
+      }
+
+      hr {
+        border-top: solid 1px #fff;
+        max-width: 80px;
+        margin: 7px auto;
+
+        @include mq("desktop_standard") {
+          margin: 7px 0;
+          margin-left: auto;
+        }
+      }
+    }
+  }
+
+  .navbar-toggler {
+    margin: 0;
+    background-color: transparent;
+    border: none;
+    margin-right: -20px;
+
+    @include mq("desktop_standard") {
+      margin-right: -15px;
+    }
+
+    img {
+      height: 45px;
+
+      @include mq("desktop_standard") {
+        height: get-vh(70px);
+      }
+    }
+  }
+
+  #navbarResponsive {
+    margin-top: 10px;
+    border-top: solid 2px #fff;
+    padding-top: 10px;
+    background: #d31e25;
+
+    @include mq("desktop_standard") {
+      padding-top: 1vw;
+      margin-top: 0;
+      border-top: none;
+      background: transparent;
+    }
+  }
+}
+
+.container {
+  max-width: 100vw;
+  padding: 0;
+  margin: 0 auto;
+
+  @include mq("desktop_standard") {
+    max-width: 89vw;
+  }
+}
+
+section {
+
+  @include mq("tablet_landsca") {
+    height: 100vh;
+  }
+
+  .container {
+
+    &>.row {
+
+      @include mq("tablet_landscape") {
+        height: 100vh;
+      }
+    }
+
+  }
+}
+
+footer {
+  bottom: 0;
+  width: 100%;
+  position: absolute;
+  background-image: url('../images/general/bg-fotoer.jpg');
+  background-repeat: no-repeat;
+  background-size: cover;
+
+  @include mq("tablet_landscape") {
+    bottom: 0;
+  }
+
+  .img-lidl {
+    max-width: 50%;
+    max-height: 50%;
+  }
+
+  @include mq("tablet_portrait") {
+    .img-lidl {
+      max-width: 25%;
+      max-height: 25%;
+
+    }
+  }
+
+  @include mq("tablet_landscape") {
+    .img-lidl {
+      max-width: 100%;
+      max-height: 100%;
+
+    }
+  }
+
+  .footer-flex {
+    display: flex;
+    flex-wrap: wrap;
+    -webkit-flex-wrap: wrap;
+    -ms-flex-wrap: wrap;
+    justify-content: center;
+    align-items: flex-end;
+
+    @include mq("tablet_landscape") {
+      justify-content: flex-start;
+    }
+  }
+
+  img {
+    width: 100%;
+    max-width: 430px;
+    margin: 0 auto;
+    margin-bottom: 10px;
+
+    @include mq("tablet_landscape") {
+      max-width: 350px;
+    }
+
+    @include mq("tablet_landscape") {
+      max-width: initial;
+      width: auto;
+      height: 3vh;
+      margin-bottom: 0;
+    }
+
+    @include mq("desktop_standard") {
+      height: 5vh;
+    }
+
+    @include mq("desktop_large") {
+      height: 5.35vh;
+    }
+  }
+
+  .copyright {
+    color: #fff;
+    text-align: center;
+    width: 100%;
+    margin-bottom: 0;
+    @include interpolate(font-size, 320px, $medium-size, 13px, 15px);
+
+    @include mq("tablet_landscape") {
+      width: auto;
+      text-align: left;
+      padding-right: 1em;
+      font-size: get-vh(18px);
+    }
+
+    @include mq("desktop_standard") {
+      font-size: get-vh(20.84px);
+    }
+
+    a {
+      color: #fff;
+      text-decoration: none;
+      text-align: center;
+      display: inline-block;
+      margin-top: 10px;
+      @include interpolate(font-size, 320px, $medium-size, 13px, 15px);
+
+      @include mq("tablet_landscape") {
+        margin-top: 0;
+        text-align: left;
+        font-size: get-vh(18px);
+      }
+
+      @include mq("desktop_standard") {
+        font-size: get-vh(20.84px);
+      }
+    }
+  }
+}
+
+.elements {
+  // margin-top: 20px;
+
+  &>.row {
+
+    @include mq("tablet_landscape") {
+      width: calc(100%);
+    }
+  }
+}
+
+.prices-img {
+  max-height: 60vh;
+}
+
+#start {
+
+  .img-bg-left {
+    max-height: 85vh;
+    margin-top: 15vh;
+
+    @include mq("tablet_landscape") {
+      max-height: 90vh;
+      margin-top: 10vh;
+    }
+  }
+
+  .icon {
+    max-width: 50px;
+  }
+
+
+  @include mq("desktop_standard") {
+    .h-100 {
+      height: 100vh !important;
+    }
+  }
+
+  .btn-box {
+    min-width: 150px;
+    margin: 0 auto;
+    margin-top: 20px;
+
+    @include mq("tablet_landscape") {
+      @include interpolate(min-width, $tablet_landscape, $large-size, 110px, 160px);
+      margin: 0;
+    }
+
+    .btn-item {
+      color: #fff;
+      line-height: 1.6;
+      background-color: $red2;
+      border: solid 2px #fff;
+      border-radius: 2px;
+      padding: 0;
+      width: 100%;
+      text-align: center;
+      display: inline-flex;
+      justify-content: center;
+      font-size: 25px;
+      width: fit-content;
+      padding: 6px 20px;
+      margin-bottom: 1em;
+
+      @include mq("tablet_landscape") {
+        font-size: 2.5vh;
+        padding: 6px 20px;
+        margin-bottom: 0;
+      }
+    }
+  }
+
+
+  p {
+    font-size: 1.5em;
+  }
+
+  .main-graphics {
+    margin-top: -70px;
+    max-width: 95%;
+    width: auto;
+
+    @include mq("mobile_big") {
+      max-width: 80%;
+    }
+
+    @include mq("tablet_landscape") {
+      margin-top: -100px;
+      max-width: initial;
+      height: 50vh;
+    }
+
+    @include mq("tablet_landscape") {
+      margin-top: -125px;
+      max-width: initial;
+      height: 85vh;
+    }
+
+    @include mq("desktop_standard") {
+      height: 96vh;
+      max-height: 1001px;
+    }
+  }
+
+  .contest {
+    margin-bottom: 25px;
+    @include interpolate(height, 320px, $medium-size, 80px, 100px);
+
+    @include mq("tablet_landscape") {
+      @include interpolate(margin-bottom, $tablet_landscape, $large-size, 25px, 30px);
+      height: 7vh;
+    }
+
+    @include mq("tablet_landscape") {
+      margin-top: 0;
+      max-height: 281px;
+      height: 8.9vh;
+    }
+  }
+
+  h1 {
+    line-height: 1.1;
+    max-width: 500px;
+    margin: 0 auto;
+    margin-bottom: 15px;
+    @include interpolate(font-size, 320px, $medium-size, 34px, 50px);
+
+    @include mq("tablet_landscape") {
+      max-width: initial;
+      line-height: 0.95;
+      font-size: get-vh(50px);
+      margin-bottom: 0;
+      width: auto;
+    }
+
+    @include mq("desktop_standard") {
+      font-size: get-vh(106px);
+      @include interpolate(max-width, $desktop_standard, $large-size, 450px, 700px);
+    }
+
+    @include mq("desktop_large") {
+      font-size: get-vh(114px);
+    }
+
+    @include mq("max_width") {
+      max-width: initial;
+    }
+
+    span {
+      color: #fff;
+      @include interpolate(font-size, 320px, $medium-size, 32px, 48px);
+
+      @include mq("tablet_landscape") {
+        font-size: 5vh;
+        @include interpolate(margin-bottom, $tablet_landscape, $large-size, 15px, 23px);
+      }
+
+      @include mq("tablet_landscape") {
+        font-size: 5.83vh;
+      }
+    }
+  }
+
+  .start-box {
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding-left: 15px;
+
+    @include mq("tablet_landscape") {
+      .start-box {
+        padding-left: 6em;
+      }
+    }
+
+    .more-info {
+      width: 100%;
+      line-height: 1.1;
+      text-transform: uppercase;
+      margin-bottom: 0;
+      @include interpolate(font-size, 320px, $medium-size, 27px, 43px);
+
+      @include mq("tablet_landscape") {
+        @include interpolate(margin-top, $tablet_landscape, $large-size, 15px, 24px);
+        font-size: 4vh;
+      }
+
+      @include mq("desktop_standard") {
+        font-size: get-vh(62px);
+      }
+    }
+
+    .margin-numbers {
+      margin-bottom: 2.5rem;
+    }
+
+    .btn-box {
+
+      a {
+        padding: 9px 15px 6px 15px;
+        color: $red;
+        border: solid 2px $yellow2;
+        background: $yellow2;
+        box-shadow: 6px 7px rgba(128, 26, 31, 0.7);
+        line-height: 1;
+        display: inline-flex;
+        transition: 0.5s all;
+
+        &:hover {
+          background: #fff;
+          border: solid 2px #fff;
+          transition: 0.5s all;
+        }
+
+        @include interpolate(font-size, 320px, $medium-size, 30px, 50px);
+
+        @include mq("tablet_landscape") {
+          font-size: 3.5vh;
+          padding: 9px 15px 9px 15px;
+        }
+
+        @include mq("tablet_landscape") {
+          font-size: 4vh;
+        }
+
+        @include mq("desktop_standard") {
+          font-size: 5vh;
+        }
+      }
+    }
+  }
+}
+
+#registration {
+
+  form{
+
+    @include mq("desktop_standard") {
+      height: 60vh;
+      overflow-y: scroll;
+    }
+  }
+  margin-top: 15vh;
+
+  .counter {
+    color: #fff;
+  }
+
+  @include mq("tablet_landscape") {
+    .row {
+      margin-bottom: 75px;
+    }
+  }
+
+  @include mq("desktop_standard") {
+    .row {
+      margin-bottom: 0px;
+    }
+  }
+
+  @include mq("desktop_standard") {
+    margin-top: 4vh;
+
+    .h-100 {
+      height: 96vh !important;
+    }
+
+  }
+
+  .img-bg-left {
+    max-height: 89vh;
+    margin-top: 10.5vh;
+
+    @include mq("desktop_standard") {
+      max-height: 96vh;
+    }
+  }
+
+  form {
+    padding-right: 0;
+
+    @include mq("tablet_landscape") {
+      padding-right: 45px;
+    }
+  }
+
+  .registration-box {
+    margin: 0 auto;
+    max-width: 100%;
+    padding: 0 20px;
+
+    @include mq("tablet_landscape") {
+      padding: 0;
+      @include interpolate(max-width, $tablet_landscape, $large-size, 565px, 845px);
+    }
+  }
+
+  .inovoice-input {
+    position: relative;
+  }
+
+  .receipt-btn {
+    cursor: pointer;
+    position: absolute;
+    top: 82px;
+    right: -45px;
+    @include interpolate(height, 320px, $medium-size, 33px, 36px);
+    @include interpolate(width, 320px, $medium-size, 32px, 35px);
+
+    @include mq("tablet_landscape") {
+      @include interpolate(height, $tablet_landscape, $large-size, 30px, 41px);
+      @include interpolate(width, $tablet_landscape, $large-size, 29px, 40px);
+      right: -25px;
+      top: 82px;
+    }
+
+    @include mq("desktop_large") {
+      right: -25px;
+    }
+  }
+
+  .postal-input {
+    width: 30%;
+  }
+
+  .city-input {
+    width: 70%;
+
+  }
+
+  .product-price-input {
+    min-height: 6.75em;
+  }
+
+  .group {
+    display: flex;
+    margin-top: 10px;
+    margin-bottom: 5px;
+
+    @include mq("desktop_standard") {
+      margin-top: 1px;
+    }
+
+    label {
+      font-family: 'MyriadPro';
+      font-weight: 400;
+      color: #fff;
+      width: calc(100% - 15px);
+      padding-left: 18px;
+      text-align: left;
+      float: left;
+      margin: 0;
+      text-transform: inherit;
+      line-height: 1.3;
+      font-size: 15px;
+
+      @include mq("tablet_landscape") {
+        font-size: 1.5vh;
+      }
+
+      @include mq("desktop_standard") {
+        padding-left: 10px;
+      }
+    }
+
+    .check {
+      float: left;
+      margin: 0;
+      border: none;
+      width: 25px;
+      height: 25px;
+
+      @include mq("desktop_standard") {
+        @include interpolate(width height, $tablet_landscape, $large-size, 17px, 20px);
+      }
+    }
+  }
+
+  #result_regi__all {
+    color: #fff;
+    @include interpolate(font-size, 320px, $medium-size, 18px, 20px);
+
+    @include mq("tablet_landscape") {
+      font-size: 2vh;
+    }
+  }
+
+  label {
+    text-align: left;
+    width: 100%;
+    color: #fff;
+    padding-left: 8px;
+    margin-bottom: 2px;
+    @include interpolate(font-size, 320px, $medium-size, 18px, 20px);
+
+    @include mq("tablet_landscape") {
+      font-size: 2vh;
+      @include interpolate(padding-left padding-right, $tablet_landscape, $large-size, 11px, 22px);
+    }
+  }
+
+  input,
+  textarea {
+    padding: 8px 8px;
+    border: none;
+    box-shadow: none;
+    background-color: #fff;
+    @include interpolate(font-size, 320px, $medium-size, 18px, 20px);
+
+    @include mq("tablet_landscape") {
+      font-size: 2vh;
+      @include interpolate(padding-left padding-right, $tablet_landscape, $large-size, 11px, 22px);
+    }
+  }
+
+  .boxes-row {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    -ms-flex-wrap: wrap;
+    -webkit-flex-wrap: wrap;
+
+    @include mq("desktop_standard") {
+      margin-top: 0;
+    }
+
+    .btn-item {
+
+      padding: 5px 35px 5px 35px;
+      color: $red;
+      border: solid 2px $yellow2;
+      background: $yellow2;
+      box-shadow: 6px 7px rgba(128, 26, 31, 0.7);
+      line-height: 1;
+      display: inline-flex;
+      transition: 0.5s all;
+      font-size: 2.5vh;
+
+      &:hover {
+        background: #fff;
+        border: solid 2px #fff;
+        transition: 0.5s all;
+      }
+    }
+  }
+
+  .product-list {
+    background: #fff;
+    color: $red;
+    height: 32vh;
+    overflow-y: scroll;
+
+    @include mq("desktop_standard") {
+      height: 16vh;
+    }
+
+    label {
+      display: flex;
+      align-items: center;
+      color: $red2;
+      position: relative;
+    }
+
+    input {
+      width: 0;
+      height: 0;
+      opacity: 0;
+      position: absolute;
+    }
+
+    label>span {
+      width: 15px;
+      height: 15px;
+      display: flex;
+      justify-content: center;
+      border: 2px solid $red2;
+      margin-right: 15px;
+      border-radius: 0;
+      background: $red2;
+      transition: all .3s;
+    }
+
+    // input:checked + label > span {
+    // border: 10px solid $red2;
+    // animation: bounce 250ms;
+    // }
+
+    input:checked+label>span::before {
+      content: 'X';
+      position: absolute;
+      top: 0px;
+      left: 18px;
+      color: #fbce07;
+      font-weight: 100;
+      font-size: 1em;
+    }
+  }
+
+  // CUSTOM SCROLLBAR
+
+  /* width */
+  ::-webkit-scrollbar {
+    width: 20px;
+  }
+
+  /* Track */
+  ::-webkit-scrollbar-track {
+    box-shadow: inset 0 0 5px black;
+    border-radius: 10px;
+  }
+
+  /* Handle */
+  ::-webkit-scrollbar-thumb {
+    background: $red;
+    border-radius: 10px;
+  }
+
+  /* Handle on hover */
+  ::-webkit-scrollbar-thumb:hover {
+    background: $red2;
+  }
+}
+
+#prices {
+
+  background: #d92026;
+
+
+  @include mq("desktop_standard") {
+    background: url('../images/general/price-bg.png') center center;
+    background-repeat: no-repeat;
+    background-size: contain;
+    overflow-x: hidden;
+
+    .h-100 {
+      height: 100vh !important;
+    }
+  }
+
+  .img-bg-left {
+    margin-top: 10vh;
+    max-height: 90vh;
+  }
+
+}
+
+#products {
+
+  @include mq("desktop_standard") {
+    .h-100 {
+      height: 100vh !important;
+    }
+  }
+
+  .img-bg-left {
+    margin-top: 10vh;
+    max-height: 90vh;
+  }
+
+  h4 {
+    @include interpolate(font-size, 320px, $medium-size, 34px, 50px);
+    line-height: 1;
+    color: #fff;
+
+    @include mq("tablet_landscape") {
+      margin-bottom: 10px;
+    }
+
+    @include mq("desktop_standard") {
+      font-size: get-vh(69px);
+    }
+  }
+
+  .products-info-1 {
+
+    p {
+      @include interpolate(font-size, 320px, $medium-size, 17px, 26px);
+
+      @include mq("desktop_standard") {
+        font-size: get-vh(35px);
+      }
+
+      @include mq("desktop_large") {
+        font-size: get-vh(22px);
+      }
+    }
+  }
+
+  .products-info-2 {
+    margin-top: 20px;
+
+    @include mq("desktop_standard") {
+      margin-top: 0;
+    }
+
+    p {
+      padding: 0 10px;
+      @include interpolate(font-size, 320px, $medium-size, 18px, 24px);
+      margin-bottom: 0;
+      text-align: right;
+      max-width: 350px;
+
+      @include mq("mobile_big") {
+        margin-right: 13px;
+      }
+
+      @include mq("desktop_standard") {
+        padding: 0;
+        font-size: get-vh(30px);
+        margin-right: 20px;
+      }
+
+    }
+
+    .arrow-icon {
+      margin-right: 13px;
+      @include interpolate(max-height, 320px, $medium-size, 25px, 38px);
+
+      @include mq("tablet_landscape") {
+        max-height: get-vh(38px);
+      }
+
+    }
+
+    .pdf-icon {
+      @include interpolate(max-height, 320px, $medium-size, 72px, 92px);
+      margin-top: 10px;
+
+      @include mq("mobile_big") {
+        margin-top: 0;
+      }
+
+      @include mq("tablet_landscape") {
+        max-height: get-vh(92px);
+      }
+    }
+  }
+
+  .main-carousel {
+    margin: 0 auto;
+
+    @include mq("tablet_landscape") {
+      margin-top: 0em;
+    }
+
+    .is-selected img {
+      transform: scale(1.3);
+
+    }
+
+    @include mq("desktop_standard") {
+      @include interpolate(max-width, $desktop_standard, $large-size, 300px, 700px);
+    }
+
+    .carousel-cell {
+      width: 100%;
+      height: get-vh(580px);
+      display: flex;
+      align-items: flex-end;
+
+
+
+
+      img {
+        height: auto;
+        max-width: 100%;
+        border-radius: 10px;
+        max-height: get-vh(300px);
+
+        @include mq("tablet_landscape") {
+          max-height: get-vh(300px);
+        }
+
+        @include mq("desktop_standard") {
+          max-height: get-vh(300px);
+        }
+
+        &.long-img {
+          margin-bottom: get-vh(-50px);
+        }
+      }
+
+      div {
+
+        .name {
+          font-family: 'MyriadPro Cond';
+          color: #fff;
+          margin-bottom: 0;
+          height: 70px;
+          text-transform: uppercase;
+          font-weight: 100;
+          margin-top: 35px;
+          margin-left: 20px;
+          font-weight: bold;
+          @include interpolate(font-size, 220px, $medium-size, 20px, 22px);
+
+          @include mq("tablet_landscape") {
+            font-size: get-vh(24px);
+          }
+
+          @include mq("desktop_standard") {
+            font-size: get-vh(28px);
+
+          }
+
+          @include mq("desktop_large") {
+            font-size: get-vh(22px);
+          }
+        }
+      }
+
+    }
+
+    .flickity-button-icon {
+      fill: $yellow;
+    }
+
+    .flickity-prev-next-button {
+      width: 50px;
+      height: 50px;
+      background: transparent;
+      top: calc(50% - 50px);
+
+      @include mq("desktop_standard") {
+        height: 70px;
+        width: 70px;
+        top: 40%;
+      }
+
+      svg {
+        height: 100%;
+      }
+
+      &.previous {
+        left: 0;
+        @include mq("desktop_standard") {
+          left: -3vw;
+        }
+      }
+
+      &.next {
+        right: 0;
+        @include mq("desktop_standard") {
+          right: -3vw;
+        }
+
+      }
+
+    }
+  }
+
+}
+
+#contact {
+  @include mq("desktop_standard") {
+
+    .h-100 {
+      height: 100vh !important;
+    }
+  }
+
+  .img-bg-left {
+    margin-top: 10vh;
+    max-height: 90vh;
+  }
+
+
+  .contact-box {
+    margin: 0 auto;
+    padding: 0 20px;
+
+    @include mq("tablet_landscape") {
+      padding: 0;
+      max-width: 900px;
+    }
+  }
+
+  h3 {
+    font-size: 2em;
+
+  }
+
+  label {
+    text-align: left;
+    width: 100%;
+    color: #fff;
+    padding-left: 16px;
+    margin-bottom: 2px;
+    @include interpolate(font-size, 320px, $medium-size, 18px, 20px);
+
+    @include mq("tablet_landscape") {
+      @include interpolate(font-size, $tablet_landscape, $large-size, 15px, 18px);
+    }
+  }
+
+  input {
+    width: 100%;
+
+    @include mq("tablet_landscape") {
+      max-width: 430px;
+      @include interpolate(margin-bottom, $tablet_landscape, $large-size, 15px, 35px);
+    }
+  }
+
+  input,
+  textarea {
+    padding: 12px 22px;
+    border: none;
+    box-shadow: none;
+    float: left;
+    font-size: 2.5vh;
+  }
+
+  textarea {
+    // @include interpolate(height, $tablet_landscape, $large-size, 140px, 240px);
+    height: 165px;
+    width: 100%;
+  }
+
+  .textarea-box {
+    width: 100%;
+
+    @include mq("tablet_landscape") {
+      margin-right: 35px;
+      max-width: 430px;
+    }
+  }
+
+  .boxes-row {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    -ms-flex-wrap: wrap;
+    -webkit-flex-wrap: wrap;
+
+    @include mq("tablet_landscape") {
+      max-width: 460px;
+    }
+
+    .btn-box {
+
+      align-self: flex-end;
+
+      input {
+        padding: 4px 45px 4px 45px;
+        color: $red;
+        border: solid 2px $yellow2;
+        background: $yellow2;
+        box-shadow: 6px 7px rgba(128, 26, 31, 0.7);
+        line-height: 1;
+        display: inline-flex;
+        transition: 0.5s all;
+        margin-top: 1em;
+        margin-bottom: 0;
+
+        &:hover {
+          background: #fff;
+          border: solid 2px #fff;
+          transition: 0.5s all;
+        }
+
+        @include interpolate(font-size, 320px, $medium-size, 30px, 50px);
+
+        @include mq("tablet_landscape") {
+          font-size: 3.5vh;
+          padding: 4px 45px 4px 45px;
+        }
+
+        @include mq("tablet_landscape") {
+          font-size: 4vh;
+        }
+
+        @include mq("desktop_standard") {
+          font-size: 4vh;
+        }
+      }
+    }
+  }
+
+  .flex-textarea {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+  }
+
+  .direct {
+    width: 100%;
+    margin-top: 20px;
+    margin-bottom: 0;
+    font-size: 3.5vh;
+
+    @include mq("tablet_landscape") {
+      margin-top: 0;
+      max-width: 360px;
+      text-align: left;
+      line-height: 1.1;
+      font-size: 4vh;
+    }
+  }
+}
+
+.btn-default {
+  border-radius: 5px;
+  background: transparent;
+  text-transform: uppercase;
+  text-shadow: 2px 2px 3px rgba(0, 0, 0, 0.6);
+  -webkit-transition: all 0.3s ease;
+  -moz-transition: all 0.3s ease;
+  -o-transition: all 0.3s ease;
+  transition: all 0.3s ease;
+  font-size: 11px;
+  min-width: 170px;
+  padding: 10px 10px;
+
+  @include mq("mobile_medium") {
+    padding: 8px 10px;
+    margin: 0 10px 10px 0;
+    @include interpolate(font-size, $mobile_medium, $tablet_landscape, 11px, 15px);
+    @include interpolate(min-width, $mobile_medium, $tablet_landscape, 150px, 220px);
+  }
+
+  @include mq("tablet_landscape") {
+    padding: 10px 20px;
+    margin: 0 20px 0 0 !important;
+    @include interpolate(font-size, $tablet_landscape, $large-size, 12px, 17px);
+    @include interpolate(min-width, $tablet_landscape, $large-size, 220px, 250px);
+  }
+}
+
+.btn {
+  margin: 0 0 10px 0;
+  text-shadow: 2px 2px 5px rgba(10, 26, 47, 0.37);
+
+  &:hover {
+    border-color: #fff;
+    color: #fff;
+  }
+}
+
+h1,
+h2,
+h3 {
+  position: relative;
+  color: #fff;
+  margin: 0;
+  line-height: 1;
+  font-size: 25px;
+
+  @include mq("mobile_medium") {
+    font-size: 33px;
+  }
+
+  @include mq("tablet_landscape") {
+    @include interpolate(font-size, $tablet_landscape, $large-size, 26px, 46px);
+  }
+
+  span {
+    float: left;
+    width: 100%;
+    color: $red;
+    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.6);
+    font-size: 20px;
+    padding-bottom: 10px;
+
+    @include mq("mobile_medium") {
+      font-size: 24px;
+      padding-bottom: 0;
+    }
+
+    @include mq("tablet_landscape") {
+      @include interpolate(font-size, $tablet_landscape, $large-size, 19px, 25px);
+    }
+  }
+}
+
+.text-box {
+  margin-bottom: 40px;
+  text-align: center;
+  background: rgba(255, 255, 255, 0.3);
+  border-radius: 10px;
+  padding: 17px;
+
+  @include mq("mobile_medium") {
+    text-align: left;
+  }
+
+  @include mq("tablet_landscape") {
+    @include interpolate(padding-right, $tablet_landscape, $large-size, 15px, 140px);
+    margin-bottom: 0;
+  }
+
+  p {
+    text-shadow: 2px 2px 5px rgba(10, 26, 47, 0.37);
+    line-height: 1.5;
+    color: #fff;
+    font-weight: 300;
+    font-size: 13px;
+
+    @include mq("mobile_medium") {
+      font-size: 15px;
+    }
+
+    @include mq("tablet_landscape") {
+      @include interpolate(font-size, $tablet_landscape, $large-size, 15px, 17px);
+      @include interpolate((margin-top, margin-bottom), $tablet_landscape, $large-size, 15px, 20px);
+    }
+
+    span {
+      text-transform: uppercase;
+    }
+  }
+}
+
+.video-wrap {
+  width: 100%;
+  height: 100%;
+  position: relative;
+  background: #d92026 url('../images/general/bg.jpg');
+  background-repeat: no-repeat;
+  background-size: cover !important;
+  overflow-x: hidden;
+  padding-bottom: 212px;
+
+  @include mq("tablet_landscape") {
+    padding-bottom: 112px;
+  }
+
+  @include mq("tablet_portrait") {
+    padding-bottom: 162px;
+  }
+
+  @include mq("desktop_standard") {
+    overflow: hidden;
+    padding-bottom: 0;
+  }
+
+}
+
+
+form {
+
+  input {
+    padding: 10px 20px;
+    border: none;
+
+    @include mq("tablet_landscape") {
+      @include interpolate(font-size, $tablet_landscape, $large-size, 14px, 18px);
+    }
+  }
+
+  .btn {
+    color: #fff;
+    padding: 10px 60px;
+    text-align: center;
+    text-transform: uppercase;
+    background: #dd1d21;
+
+    @include mq("tablet_landscape") {
+      @include interpolate(font-size, $tablet_landscape, $large-size, 13px, 17px);
+    }
+  }
+}
+
+
+.modal {
+
+  .modal-dialog {
+    max-width: 300px;
+  }
+
+  img {
+    width: 100%;
+    max-width: 300px;
+  }
+}
