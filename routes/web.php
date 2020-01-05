@@ -24,6 +24,9 @@ Route::namespace('Admin')->name('admin.')->prefix('administracja')->group(functi
     Route::get('/data/{form}', 'DashboardController@data')->name('data');
     Route::get('/winner/{form}', 'DashboardController@winner')->name('winner');
     Route::get('/confirm/{form}', 'DashboardController@confirm')->name('confirm');
+    Route::get('/mailtest', 'DashboardController@mailtest')->name('mailtest');
+    Route::get('/getcsv', 'DashboardController@getCsv')->name('getcsv');
+    Route::get('/getwinnerscsv', 'DashboardController@getWinnersCsv')->name('getwinnerscsv');
     Route::prefix('dashboard')->name('dashboard.')->group(function () {
       //  Route::get('/', 'DashboardController@days')->name('days');
      //   Route::get('/days', 'DashboardController@days')->name('days');

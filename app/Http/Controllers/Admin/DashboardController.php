@@ -2,11 +2,14 @@
 
 namespace App\Http\Controllers\Admin;
 
+use App\Exports\DailyWinnersExport;
 use App\Models\Form;
 use Carbon\Carbon;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\Input;
+use Illuminate\Support\Facades\Mail;
+use Maatwebsite\Excel\Facades\Excel;
 
 class DashboardController extends BaseController
 {
@@ -54,6 +57,7 @@ class DashboardController extends BaseController
         return view('admin.registers', compact('registers', 'date'));
 
     }
+
     public function forms()
     {
 
@@ -98,6 +102,7 @@ class DashboardController extends BaseController
     {
         return view('admin.form', compact('form'));
     }
+
     public function data(Form $form)
     {
         return view('admin.data', compact('form'));
@@ -115,4 +120,77 @@ class DashboardController extends BaseController
 
         return redirect()->back()->with('save', true);
     }
+
+    public function mailtest()
+    {
+        Mail::send('mails.register', [], function ($message) {
+            $message->to('gerardxlfc@gmail.com', $name = null);
+            $message->from(env('MAIL_USERNAME'));
+            $message->subject('Grasz o TYsiące!');
+        });
+        dd('test');
+    }
+
+    public function getCsv()
+    {
+        $winnersDB = Form::all();
+
+
+        $array = [];
+
+        $i = 1;
+        foreach ($winnersDB as $ret) {
+            $id = $ret->id;
+
+            $array[] = array($id, Carbon::parse($ret->created_at)->addHour()->format('Y-m-d H:i:s'), $ret->email, $ret->paragon, $ret->description);
+
+            $i++;
+        }
+        $reviews[] = [
+            "Id" => "Id",
+            "Data zgłoszenia" => "Data zgłoszenia",
+            "Email" => "Email",
+            "Nr paragonu" => "Nr paragonu",
+            "Tekst" => "Tekst"
+        ];
+        $reviews = array_merge($reviews, $array);
+
+
+        return Excel::download(new DailyWinnersExport($reviews), 'registers.xlsx');
+    }
+    public function getWinnersCsv()
+    {
+        $winnersDB = Form::whereNotNull('name')->get();
+
+
+        $array = [];
+
+        $i = 1;
+        foreach ($winnersDB as $ret) {
+            $id = $ret->id;
+
+            $array[] = array($id,
+                $ret->name, $ret->surname,
+                $ret->postal . ' ' . $ret->city . ' ' . $ret->street,$ret->phone,
+                Carbon::parse($ret->created_at)->addHour()->format('Y-m-d H:i:s'), $ret->email, $ret->paragon, $ret->description);
+
+            $i++;
+        }
+        $reviews[] = [
+            "Id" => "Id",
+            "Imię" => "Imię",
+            "Nazwisko" => "Nazwisko",
+            "Adres" => "Adres",
+            "Telefon" => "Telefon",
+            "Data zgłoszenia" => "Data zgłoszenia",
+            "Email" => "Email",
+            "Nr paragonu" => "Nr paragonu",
+            "Tekst" => "Tekst"
+        ];
+        $reviews = array_merge($reviews, $array);
+
+
+        return Excel::download(new DailyWinnersExport($reviews), 'registers.xlsx');
+    }
+
 }

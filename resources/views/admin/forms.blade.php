@@ -25,6 +25,7 @@
 
         Szukany paragon: {{ $b }}
     @endisset
+    <a class="btn btn-primary" href="{{ route('admin.getwinnerscsv') }}"> Export wypełnionych zgłoszeń do CSV </a>
     <table class="table table-striped">
         <tr>
             <th>Id</th>
