@@ -4,6 +4,7 @@ namespace App\Http\Controllers\Admin;
 
 use App\Exports\DailyWinnersExport;
 use App\Models\Form;
+use App\Models\Register;
 use Carbon\Carbon;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
@@ -65,7 +66,7 @@ class DashboardController extends BaseController
         $b = Input::get('b');
         if ($q != "" || $b != "") {
 
-            $query = Form::query();
+            $query = Register::query();
 
             if ($q != "") {
                 $query = $query->where('email', 'LIKE', '%' . $q . '%');
@@ -74,7 +75,7 @@ class DashboardController extends BaseController
                 $query = $query->where('paragon', '=', $b);
             }
 
-            $registers = $query->whereNotNull('name')->orderByDesc('created_at')->paginate(50)->setPath('');
+            $registers = $query->orderByDesc('created_at')->paginate(50)->setPath('');
             $pagination = $registers->appends(array(
                 'q' => Input::get('q'),
                 'b' => Input::get('b')
@@ -92,7 +93,7 @@ class DashboardController extends BaseController
         //$registers = Register::where('id', '>', 0)->orderByDesc('created_at')->paginate(20);
 
 
-        $registers = Form::whereNotNull('name')->orderByDesc('created_at')->paginate(50);
+        $registers = Register::orderByDesc('created_at')->paginate(50);
 
         return view('admin.forms', compact('registers', 'date'));
 
@@ -103,12 +104,12 @@ class DashboardController extends BaseController
         return view('admin.form', compact('form'));
     }
 
-    public function data(Form $form)
+    public function data(Register $form)
     {
         return view('admin.data', compact('form'));
     }
 
-    public function winner(Form $form)
+    public function winner(Register $form)
     {
         $form->status = 1;
         $form->save();
@@ -160,7 +161,7 @@ class DashboardController extends BaseController
     }
     public function getWinnersCsv()
     {
-        $winnersDB = Form::whereNotNull('name')->get();
+        $winnersDB = Register::whereNotNull('name')->get();
 
 
         $array = [];
@@ -182,10 +183,7 @@ class DashboardController extends BaseController
             "Nazwisko" => "Nazwisko",
             "Adres" => "Adres",
             "Telefon" => "Telefon",
-            "Data zgłoszenia" => "Data zgłoszenia",
-            "Email" => "Email",
-            "Nr paragonu" => "Nr paragonu",
-            "Tekst" => "Tekst"
+            "Email" => "Email"
         ];
         $reviews = array_merge($reviews, $array);
 

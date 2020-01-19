@@ -153,22 +153,13 @@
   $(".elements").hide();
   $("#start").show();
 
-  $('.nav-link').on('click', function(){
-      if($(this).hasClass('prices')){
-        $('.video-wrap ').css('background', '#d92026');
-      }
-      else{
-        $('.video-wrap ').css('background', '#d92026 url("images/general/bg.jpg")');
-      }
 
-  })
-
-  var maxLength = 300;
-$('#entry-text-area').keyup(function() {
-  var length = $(this).val().length;
-  var length = maxLength-length;
-  $('#chars').text(length);
-});
+//   var maxLength = 300;
+// $('#entry-text-area').keyup(function() {
+//   var length = $(this).val().length;
+//   var length = maxLength-length;
+//   $('#chars').text(length);
+// });
 
 
     $('.navbar-toggler').on("click", function(){

@@ -101,10 +101,8 @@ p {
   .logo-and-title h2 {
     font-size: 2.5em; }
   @media only screen and (min-width: 1200px) {
-    .logo-and-title {
-      margin-left: -10em; }
-      .logo-and-title h2 {
-        font-size: 3em; } }
+    .logo-and-title h2 {
+      font-size: 3em; } }
 
 nav {
   height: auto;
@@ -283,35 +281,58 @@ footer {
 .prices-img {
   max-height: 60vh; }
 
-#start .img-bg-left {
-  max-height: 85vh;
-  margin-top: 15vh; }
-  @media only screen and (min-width: 992px) {
-    #start .img-bg-left {
-      max-height: 90vh;
-      margin-top: 10vh; } }
-#start .icon {
-  max-width: 50px; }
 @media only screen and (min-width: 1200px) {
   #start .h-100 {
     height: 100vh !important; } }
-#start .btn-box {
+#start .img-bg-left {
+  position: relative;
+  margin-top: 4em; }
+  @media only screen and (min-width: 992px) {
+    #start .img-bg-left {
+      max-height: 90vh;
+      position: absolute;
+      bottom: 32px;
+      left: 0; } }
+#start .img-prices {
+  max-width: 82%; }
+
+#rules .img-bg-left {
+  position: relative;
+  margin-top: 4em; }
+  @media only screen and (min-width: 992px) {
+    #rules .img-bg-left {
+      max-height: 90vh;
+      position: absolute;
+      bottom: 32px;
+      left: 0; } }
+#rules .second-box {
+  min-width: 414px; }
+#rules .third-box {
+  min-width: 442px; }
+#rules .icon-box {
+  width: 100px; }
+#rules .icon {
+  max-width: 50px; }
+@media only screen and (min-width: 1200px) {
+  #rules .h-100 {
+    height: 100vh !important; } }
+#rules .btn-box {
   min-width: 150px;
   margin: 0 auto;
   margin-top: 20px; }
   @media only screen and (min-width: 992px) {
-    #start .btn-box {
+    #rules .btn-box {
       margin: 0; }
-      #start .btn-box {
+      #rules .btn-box {
         min-width: 110px; } }
     @media only screen and (min-width: 992px) and (min-width: 992px) {
-      #start .btn-box {
+      #rules .btn-box {
         min-width: calc(5.3879310345vw + 56.5517241379px); } }
     @media only screen and (min-width: 992px) and (min-width: 1920px) {
-      #start .btn-box {
+      #rules .btn-box {
         min-width: 160px; } }
 
-  #start .btn-box .btn-item {
+  #rules .btn-box .btn-item {
     color: #fff;
     line-height: 1.6;
     background-color: #af0811;
@@ -327,164 +348,163 @@ footer {
     padding: 6px 20px;
     margin-bottom: 1em; }
     @media only screen and (min-width: 992px) {
-      #start .btn-box .btn-item {
+      #rules .btn-box .btn-item {
         font-size: 2.5vh;
         padding: 6px 20px;
         margin-bottom: 0; } }
-#start p {
+#rules p {
   font-size: 1.5em; }
-#start .main-graphics {
+#rules .main-graphics {
   margin-top: -70px;
   max-width: 95%;
   width: auto; }
   @media only screen and (min-width: 576px) {
-    #start .main-graphics {
+    #rules .main-graphics {
       max-width: 80%; } }
   @media only screen and (min-width: 992px) {
-    #start .main-graphics {
+    #rules .main-graphics {
       margin-top: -100px;
       max-width: initial;
       height: 50vh; } }
   @media only screen and (min-width: 992px) {
-    #start .main-graphics {
+    #rules .main-graphics {
       margin-top: -125px;
       max-width: initial;
       height: 85vh; } }
   @media only screen and (min-width: 1200px) {
-    #start .main-graphics {
+    #rules .main-graphics {
       height: 96vh;
       max-height: 1001px; } }
-#start .contest {
+#rules .contest {
   margin-bottom: 25px; }
-  #start .contest {
+  #rules .contest {
     height: 80px; }
     @media screen and (min-width: 320px) {
-      #start .contest {
+      #rules .contest {
         height: calc(4.4742729306vw + 65.6823266219px); } }
     @media screen and (min-width: 767px) {
-      #start .contest {
+      #rules .contest {
         height: 100px; } }
   @media only screen and (min-width: 992px) {
-    #start .contest {
+    #rules .contest {
       height: 7vh; }
-      #start .contest {
+      #rules .contest {
         margin-bottom: 25px; } }
     @media only screen and (min-width: 992px) and (min-width: 992px) {
-      #start .contest {
+      #rules .contest {
         margin-bottom: calc(0.5387931034vw + 19.6551724138px); } }
     @media only screen and (min-width: 992px) and (min-width: 1920px) {
-      #start .contest {
+      #rules .contest {
         margin-bottom: 30px; } }
 
   @media only screen and (min-width: 992px) {
-    #start .contest {
+    #rules .contest {
       margin-top: 0;
       max-height: 281px;
       height: 8.9vh; } }
-#start h1 {
+#rules h1 {
   line-height: 1.1;
   max-width: 500px;
   margin: 0 auto;
   margin-bottom: 15px; }
-  #start h1 {
+  #rules h1 {
     font-size: 34px; }
     @media screen and (min-width: 320px) {
-      #start h1 {
+      #rules h1 {
         font-size: calc(3.5794183445vw + 22.5458612975px); } }
     @media screen and (min-width: 767px) {
-      #start h1 {
+      #rules h1 {
         font-size: 50px; } }
   @media only screen and (min-width: 992px) {
-    #start h1 {
+    #rules h1 {
       max-width: initial;
       line-height: 0.95;
       font-size: 4.6296296296vh;
       margin-bottom: 0;
       width: auto; } }
   @media only screen and (min-width: 1200px) {
-    #start h1 {
+    #rules h1 {
       font-size: 9.8148148148vh; }
-      #start h1 {
+      #rules h1 {
         max-width: 450px; } }
     @media only screen and (min-width: 1200px) and (min-width: 1200px) {
-      #start h1 {
+      #rules h1 {
         max-width: calc(34.7222222222vw + 33.3333333333px); } }
     @media only screen and (min-width: 1200px) and (min-width: 1920px) {
-      #start h1 {
+      #rules h1 {
         max-width: 700px; } }
 
   @media only screen and (min-width: 1600px) {
-    #start h1 {
+    #rules h1 {
       font-size: 10.5555555556vh; } }
   @media only screen and (min-width: 1921px) {
-    #start h1 {
+    #rules h1 {
       max-width: initial; } }
-  #start h1 span {
+  #rules h1 span {
     color: #fff; }
-    #start h1 span {
+    #rules h1 span {
       font-size: 32px; }
       @media screen and (min-width: 320px) {
-        #start h1 span {
+        #rules h1 span {
           font-size: calc(3.5794183445vw + 20.5458612975px); } }
       @media screen and (min-width: 767px) {
-        #start h1 span {
+        #rules h1 span {
           font-size: 48px; } }
     @media only screen and (min-width: 992px) {
-      #start h1 span {
+      #rules h1 span {
         font-size: 5vh; }
-        #start h1 span {
+        #rules h1 span {
           margin-bottom: 15px; } }
     @media only screen and (min-width: 992px) and (min-width: 992px) {
-      #start h1 span {
+      #rules h1 span {
         margin-bottom: calc(0.8620689655vw + 6.4482758621px); } }
     @media only screen and (min-width: 992px) and (min-width: 1920px) {
-      #start h1 span {
+      #rules h1 span {
         margin-bottom: 23px; } }
 
     @media only screen and (min-width: 992px) {
-      #start h1 span {
+      #rules h1 span {
         font-size: 5.83vh; } }
-#start .start-box {
+#rules .start-box {
   text-align: center;
   display: flex;
   flex-direction: column;
-  justify-content: center;
   align-items: center;
   padding-left: 15px; }
   @media only screen and (min-width: 992px) {
-    #start .start-box .start-box {
+    #rules .start-box .start-box {
       padding-left: 6em; } }
-  #start .start-box .more-info {
+  #rules .start-box .more-info {
     width: 100%;
     line-height: 1.1;
     text-transform: uppercase;
     margin-bottom: 0; }
-    #start .start-box .more-info {
+    #rules .start-box .more-info {
       font-size: 27px; }
       @media screen and (min-width: 320px) {
-        #start .start-box .more-info {
+        #rules .start-box .more-info {
           font-size: calc(3.5794183445vw + 15.5458612975px); } }
       @media screen and (min-width: 767px) {
-        #start .start-box .more-info {
+        #rules .start-box .more-info {
           font-size: 43px; } }
     @media only screen and (min-width: 992px) {
-      #start .start-box .more-info {
+      #rules .start-box .more-info {
         font-size: 4vh; }
-        #start .start-box .more-info {
+        #rules .start-box .more-info {
           margin-top: 15px; } }
     @media only screen and (min-width: 992px) and (min-width: 992px) {
-      #start .start-box .more-info {
+      #rules .start-box .more-info {
         margin-top: calc(0.9698275862vw + 5.3793103448px); } }
     @media only screen and (min-width: 992px) and (min-width: 1920px) {
-      #start .start-box .more-info {
+      #rules .start-box .more-info {
         margin-top: 24px; } }
 
     @media only screen and (min-width: 1200px) {
-      #start .start-box .more-info {
+      #rules .start-box .more-info {
         font-size: 5.7407407407vh; } }
-  #start .start-box .margin-numbers {
+  #rules .start-box .margin-numbers {
     margin-bottom: 2.5rem; }
-  #start .start-box .btn-box a {
+  #rules .start-box .btn-box a {
     padding: 9px 15px 6px 15px;
     color: #dd1d21;
     border: solid 2px #faed23;
@@ -492,28 +512,29 @@ footer {
     box-shadow: 6px 7px rgba(128, 26, 31, 0.7);
     line-height: 1;
     display: inline-flex;
-    transition: 0.5s all; }
-    #start .start-box .btn-box a:hover {
+    transition: 0.5s all;
+    width: unset; }
+    #rules .start-box .btn-box a:hover {
       background: #fff;
       border: solid 2px #fff;
       transition: 0.5s all; }
-    #start .start-box .btn-box a {
+    #rules .start-box .btn-box a {
       font-size: 30px; }
       @media screen and (min-width: 320px) {
-        #start .start-box .btn-box a {
+        #rules .start-box .btn-box a {
           font-size: calc(4.4742729306vw + 15.6823266219px); } }
       @media screen and (min-width: 767px) {
-        #start .start-box .btn-box a {
+        #rules .start-box .btn-box a {
           font-size: 50px; } }
     @media only screen and (min-width: 992px) {
-      #start .start-box .btn-box a {
+      #rules .start-box .btn-box a {
         font-size: 3.5vh;
         padding: 9px 15px 9px 15px; } }
     @media only screen and (min-width: 992px) {
-      #start .start-box .btn-box a {
+      #rules .start-box .btn-box a {
         font-size: 4vh; } }
     @media only screen and (min-width: 1200px) {
-      #start .start-box .btn-box a {
+      #rules .start-box .btn-box a {
         font-size: 5vh; } }
 
 #registration {
@@ -526,6 +547,9 @@ footer {
     #registration form {
       height: 60vh;
       overflow-y: scroll; } }
+  @media only screen and (min-width: 1200px) {
+    #registration {
+      margin-top: 0; } }
   #registration .counter {
     color: #fff; }
   @media only screen and (min-width: 992px) {
@@ -535,16 +559,12 @@ footer {
     #registration .row {
       margin-bottom: 0px; } }
   @media only screen and (min-width: 1200px) {
-    #registration {
-      margin-top: 4vh; }
-      #registration .h-100 {
-        height: 96vh !important; } }
+    #registration .h-100 {
+      height: 100vh !important; } }
   #registration .img-bg-left {
-    max-height: 89vh;
-    margin-top: 10.5vh; }
-    @media only screen and (min-width: 1200px) {
-      #registration .img-bg-left {
-        max-height: 96vh; } }
+    position: absolute;
+    bottom: 32px;
+    left: 0; }
   #registration form {
     padding-right: 0; }
     @media only screen and (min-width: 992px) {
@@ -812,26 +832,25 @@ footer {
   #registration ::-webkit-scrollbar-thumb:hover {
     background: #af0811; }
 
-#prices {
-  background: #d92026; }
-  @media only screen and (min-width: 1200px) {
-    #prices {
-      background: url("../images/general/price-bg.png") center center;
-      background-repeat: no-repeat;
-      background-size: contain;
-      overflow-x: hidden; }
-      #prices .h-100 {
-        height: 100vh !important; } }
-  #prices .img-bg-left {
-    margin-top: 10vh;
-    max-height: 90vh; }
+@media only screen and (min-width: 1200px) {
+  #prices {
+    background: url("../images/general/price-bg.png") center center;
+    background-repeat: no-repeat;
+    background-size: contain;
+    overflow-x: hidden; }
+    #prices .h-100 {
+      height: 100vh !important; } }
+#prices .img-bg-left {
+  margin-top: 10vh;
+  max-height: 90vh; }
 
 @media only screen and (min-width: 1200px) {
   #products .h-100 {
     height: 100vh !important; } }
 #products .img-bg-left {
-  margin-top: 10vh;
-  max-height: 90vh; }
+  position: absolute;
+  bottom: 32px;
+  left: 0; }
 #products h4 {
   line-height: 1;
   color: #fff; }
@@ -937,7 +956,7 @@ footer {
 
   #products .main-carousel .carousel-cell {
     width: 100%;
-    height: 53.7037037037vh;
+    height: 50.9259259259vh;
     display: flex;
     align-items: flex-end; }
     #products .main-carousel .carousel-cell img {
@@ -957,10 +976,10 @@ footer {
       font-family: 'MyriadPro Cond';
       color: #fff;
       margin-bottom: 0;
-      height: 70px;
+      height: 100px;
       text-transform: uppercase;
       font-weight: 100;
-      margin-top: 35px;
+      margin-top: 14px;
       margin-left: 20px;
       font-weight: bold; }
       #products .main-carousel .carousel-cell div .name {
@@ -1008,9 +1027,17 @@ footer {
 @media only screen and (min-width: 1200px) {
   #contact .h-100 {
     height: 100vh !important; } }
+#contact .logo-and-title {
+  margin-left: 0; }
 #contact .img-bg-left {
-  margin-top: 10vh;
-  max-height: 90vh; }
+  position: relative;
+  margin-top: 4em; }
+  @media only screen and (min-width: 992px) {
+    #contact .img-bg-left {
+      max-height: 90vh;
+      position: absolute;
+      bottom: 32px;
+      left: 0; } }
 #contact .contact-box {
   margin: 0 auto;
   padding: 0 20px; }
@@ -1048,15 +1075,13 @@ footer {
   width: 100%; }
   @media only screen and (min-width: 992px) {
     #contact input {
-      max-width: 430px; }
-      #contact input {
-        margin-bottom: 15px; } }
-    @media only screen and (min-width: 992px) and (min-width: 992px) {
-      #contact input {
-        margin-bottom: calc(2.1551724138vw - 6.3793103448px); } }
-    @media only screen and (min-width: 992px) and (min-width: 1920px) {
-      #contact input {
-        margin-bottom: 35px; } }
+      margin-bottom: 15px; } }
+  @media only screen and (min-width: 992px) and (min-width: 992px) {
+    #contact input {
+      margin-bottom: calc(2.1551724138vw - 6.3793103448px); } }
+  @media only screen and (min-width: 992px) and (min-width: 1920px) {
+    #contact input {
+      margin-bottom: 35px; } }
 
 #contact input,
 #contact textarea {
@@ -1066,23 +1091,19 @@ footer {
   float: left;
   font-size: 2.5vh; }
 #contact textarea {
-  height: 165px;
+  height: 125px;
   width: 100%; }
 #contact .textarea-box {
   width: 100%; }
   @media only screen and (min-width: 992px) {
     #contact .textarea-box {
-      margin-right: 35px;
-      max-width: 430px; } }
+      margin-right: 35px; } }
 #contact .boxes-row {
   display: flex;
-  justify-content: space-between;
+  justify-content: center;
   flex-wrap: wrap;
   -ms-flex-wrap: wrap;
   -webkit-flex-wrap: wrap; }
-  @media only screen and (min-width: 992px) {
-    #contact .boxes-row {
-      max-width: 460px; } }
   #contact .boxes-row .btn-box {
     align-self: flex-end; }
     #contact .boxes-row .btn-box input {
@@ -1094,7 +1115,7 @@ footer {
       line-height: 1;
       display: inline-flex;
       transition: 0.5s all;
-      margin-top: 1em;
+      margin-top: 0;
       margin-bottom: 0; }
       #contact .boxes-row .btn-box input:hover {
         background: #fff;
@@ -1130,7 +1151,6 @@ footer {
   @media only screen and (min-width: 992px) {
     #contact .direct {
       margin-top: 0;
-      max-width: 360px;
       text-align: left;
       line-height: 1.1;
       font-size: 4vh; } }

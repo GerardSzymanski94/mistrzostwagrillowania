@@ -13,8 +13,12 @@
 
 Route::get('/', 'HomeController@index')->name('index');
 Route::post('/saveform', 'HomeController@saveform')->name('saveform');
+Route::get('/form1/5I8F5d3d96', 'HomeController@showForm1')->name('showform1');
+Route::get('/form2/0Ks2c6I92nl', 'HomeController@showForm2')->name('showform2');
+Route::post('/saveform', 'HomeController@saveform')->name('saveform');
 Route::post('/contactform', 'HomeController@contactform')->name('contactform');
-Route::post('/confirmform', 'HomeController@confirmFormSave')->name('confirmform');
+Route::post('/confirmform1', 'HomeController@confirmFormSave')->name('confirmform');
+Route::post('/confirmform2', 'HomeController@confirmFormSave2')->name('confirmform2');
 
 Route::namespace('Admin')->name('admin.')->prefix('administracja')->group(function () {
 

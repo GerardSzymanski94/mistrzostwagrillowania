@@ -141,7 +141,7 @@ p {
   }
 
   @include mq("desktop_standard") {
-    margin-left: -10em;
+    // margin-left: -10em;
 
     h2 {
       font-size: 3em;
@@ -395,16 +395,60 @@ footer {
   max-height: 60vh;
 }
 
-#start {
+#start{
+  @include mq("desktop_standard") {
+    .h-100 {
+      height: 100vh !important;
+    }
+  }
 
   .img-bg-left {
-    max-height: 85vh;
-    margin-top: 15vh;
+    position: relative;
+    margin-top: 4em;
+    
 
     @include mq("tablet_landscape") {
       max-height: 90vh;
-      margin-top: 10vh;
+      position: absolute;
+      bottom: 32px;
+      left: 0;
+
     }
+
+  }
+
+  .img-prices{
+    max-width: 82%;
+  }
+
+}
+
+#rules {
+
+  .img-bg-left {
+    position: relative;
+    margin-top: 4em;
+    
+
+    @include mq("tablet_landscape") {
+      max-height: 90vh;
+      position: absolute;
+      bottom: 32px;
+      left: 0;
+
+    }
+
+  }
+
+  .second-box{
+    min-width: 414px;
+  }
+  .third-box{
+    min-width: 442px;
+  }
+
+  .icon-box{
+    width: 100px;
   }
 
   .icon {
@@ -547,7 +591,6 @@ footer {
     text-align: center;
     display: flex;
     flex-direction: column;
-    justify-content: center;
     align-items: center;
     padding-left: 15px;
 
@@ -589,6 +632,7 @@ footer {
         line-height: 1;
         display: inline-flex;
         transition: 0.5s all;
+        width: unset;
 
         &:hover {
           background: #fff;
@@ -626,6 +670,10 @@ footer {
   }
   margin-top: 15vh;
 
+  @include mq("desktop_standard") {
+    margin-top: 0;
+  }
+
   .counter {
     color: #fff;
   }
@@ -643,21 +691,17 @@ footer {
   }
 
   @include mq("desktop_standard") {
-    margin-top: 4vh;
 
     .h-100 {
-      height: 96vh !important;
+      height: 100vh !important;
     }
 
   }
 
   .img-bg-left {
-    max-height: 89vh;
-    margin-top: 10.5vh;
-
-    @include mq("desktop_standard") {
-      max-height: 96vh;
-    }
+    position: absolute;
+    bottom: 32px;
+    left: 0;
   }
 
   form {
@@ -907,8 +951,6 @@ footer {
 
 #prices {
 
-  background: #d92026;
-
 
   @include mq("desktop_standard") {
     background: url('../images/general/price-bg.png') center center;
@@ -937,8 +979,9 @@ footer {
   }
 
   .img-bg-left {
-    margin-top: 10vh;
-    max-height: 90vh;
+    position: absolute;
+    bottom: 32px;
+    left: 0;
   }
 
   h4 {
@@ -1038,7 +1081,7 @@ footer {
 
     .carousel-cell {
       width: 100%;
-      height: get-vh(580px);
+      height: get-vh(550px);
       display: flex;
       align-items: flex-end;
 
@@ -1070,10 +1113,10 @@ footer {
           font-family: 'MyriadPro Cond';
           color: #fff;
           margin-bottom: 0;
-          height: 70px;
+          height: 100px;
           text-transform: uppercase;
           font-weight: 100;
-          margin-top: 35px;
+          margin-top: 14px;
           margin-left: 20px;
           font-weight: bold;
           @include interpolate(font-size, 220px, $medium-size, 20px, 22px);
@@ -1143,9 +1186,22 @@ footer {
     }
   }
 
+  .logo-and-title{
+    margin-left:0;
+  }
   .img-bg-left {
-    margin-top: 10vh;
-    max-height: 90vh;
+    position: relative;
+    margin-top: 4em;
+    
+
+    @include mq("tablet_landscape") {
+      max-height: 90vh;
+      position: absolute;
+      bottom: 32px;
+      left: 0;
+
+    }
+
   }
 
 
@@ -1181,7 +1237,6 @@ footer {
     width: 100%;
 
     @include mq("tablet_landscape") {
-      max-width: 430px;
       @include interpolate(margin-bottom, $tablet_landscape, $large-size, 15px, 35px);
     }
   }
@@ -1197,7 +1252,7 @@ footer {
 
   textarea {
     // @include interpolate(height, $tablet_landscape, $large-size, 140px, 240px);
-    height: 165px;
+    height: 125px;
     width: 100%;
   }
 
@@ -1206,20 +1261,16 @@ footer {
 
     @include mq("tablet_landscape") {
       margin-right: 35px;
-      max-width: 430px;
     }
   }
 
   .boxes-row {
     display: flex;
-    justify-content: space-between;
+    justify-content: center;
     flex-wrap: wrap;
     -ms-flex-wrap: wrap;
     -webkit-flex-wrap: wrap;
 
-    @include mq("tablet_landscape") {
-      max-width: 460px;
-    }
 
     .btn-box {
 
@@ -1234,7 +1285,7 @@ footer {
         line-height: 1;
         display: inline-flex;
         transition: 0.5s all;
-        margin-top: 1em;
+        margin-top: 0;
         margin-bottom: 0;
 
         &:hover {
@@ -1275,7 +1326,6 @@ footer {
 
     @include mq("tablet_landscape") {
       margin-top: 0;
-      max-width: 360px;
       text-align: left;
       line-height: 1.1;
       font-size: 4vh;

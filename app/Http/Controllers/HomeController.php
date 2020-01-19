@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Form;
+use App\Models\Register;
 use Illuminate\Http\Request;
 
 class HomeController extends Controller
@@ -62,10 +63,11 @@ class HomeController extends Controller
 
     }
 
-    public function confirmFormSave(Request $request, $token)
+    public function confirmFormSave(Request $request)
     {
-        $form = Form::where('token', $token);
+        //$form = Form::where('token', $token);
 
+        $form = new Register();
         $form->name = $request->input('name');
         $form->surname = $request->input('surname');
         $form->city = $request->input('city');
@@ -76,5 +78,39 @@ class HomeController extends Controller
             $photo = $request->file('paragonimg')->store('bill/' . $form->id . '/');
             $form->paragonimg = $photo;
         }
+
+        return redirect()->back()->with('correct-data-prize', true);
+
+        $form->save();
+    }
+
+    public function confirmFormSave2(Request $request)
+    {
+        //$form = Form::where('token', $token);
+
+        $form = new Register();
+        $form->name = $request->input('name');
+        $form->surname = $request->input('surname');
+        $form->city = $request->input('city');
+        $form->postal = $request->input('postal');
+        $form->street = $request->input('street');
+
+        if ($request->hasFile('paragonimg')) {
+            $photo = $request->file('paragonimg')->store('bill/' . $form->id . '/');
+            $form->paragonimg = $photo;
+        }
+
+        $form->save();
+        return redirect()->back()->with('correct-data-prize', true);
+    }
+
+    public function showForm1()
+    {
+        return view('user.form1');
+    }
+
+    public function showForm2()
+    {
+        return view('user.form2');
     }
 }
