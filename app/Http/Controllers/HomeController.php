@@ -4,12 +4,19 @@ namespace App\Http\Controllers;
 
 use App\Models\Form;
 use App\Models\Register;
+use Carbon\Carbon;
 use Illuminate\Http\Request;
 
 class HomeController extends Controller
 {
     public function index()
     {
+        $date = Carbon::now();
+        $date->addHour()->addHour();
+        if ($date->format('Y-m-d') == "2020-01-19") {
+
+            return response()->view('user.blank');
+        }
         return response()->view('user.front');
     }
 
@@ -71,17 +78,24 @@ class HomeController extends Controller
         $form->name = $request->input('name');
         $form->surname = $request->input('surname');
         $form->city = $request->input('city');
+        $form->phone = $request->input('phone');
+        $form->email = $request->input('email');
         $form->postal = $request->input('postal');
-        $form->street = $request->input('street');
+        $form->status = 1;
+        if ($request->has('street_number2')) {
+            $form->street = $request->input('street') . " " . $request->input('street_number') . "/" . $request->input('street_number2');
+        } else {
+            $form->street = $request->input('street') . " " . $request->input('street_number');
+        }
 
-        if ($request->hasFile('paragonimg')) {
-            $photo = $request->file('paragonimg')->store('bill/' . $form->id . '/');
+        if ($request->hasFile('paragon')) {
+            $photo = $request->file('paragon')->store('bill/' . $form->id . '/');
             $form->paragonimg = $photo;
         }
 
-        return redirect()->back()->with('correct-data-prize', true);
-
         $form->save();
+        return redirect()->back()->with('formSaved', true);
+
     }
 
     public function confirmFormSave2(Request $request)
@@ -92,16 +106,23 @@ class HomeController extends Controller
         $form->name = $request->input('name');
         $form->surname = $request->input('surname');
         $form->city = $request->input('city');
+        $form->phone = $request->input('phone');
+        $form->email = $request->input('email');
         $form->postal = $request->input('postal');
-        $form->street = $request->input('street');
+        $form->status = 2;
+        if ($request->has('street_number2')) {
+            $form->street = $request->input('street') . " " . $request->input('street_number') . "/" . $request->input('street_number2');
+        } else {
+            $form->street = $request->input('street') . " " . $request->input('street_number');
+        }
 
-        if ($request->hasFile('paragonimg')) {
-            $photo = $request->file('paragonimg')->store('bill/' . $form->id . '/');
+        if ($request->hasFile('paragon')) {
+            $photo = $request->file('paragon')->store('bill/' . $form->id . '/');
             $form->paragonimg = $photo;
         }
 
         $form->save();
-        return redirect()->back()->with('correct-data-prize', true);
+        return redirect()->back()->with('formSaved', true);
     }
 
     public function showForm1()

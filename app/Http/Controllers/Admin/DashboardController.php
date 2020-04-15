@@ -143,7 +143,8 @@ class DashboardController extends BaseController
         foreach ($winnersDB as $ret) {
             $id = $ret->id;
 
-            $array[] = array($id, Carbon::parse($ret->created_at)->addHour()->format('Y-m-d H:i:s'), $ret->email, $ret->paragon, $ret->description);
+            $array[] = array($id, Carbon::parse($ret->created_at)->addHour()->format('Y-m-d H:i:s'), $ret->email, $ret->paragon, $ret->description,
+                $ret->getProducts());
 
             $i++;
         }
@@ -152,13 +153,15 @@ class DashboardController extends BaseController
             "Data zgłoszenia" => "Data zgłoszenia",
             "Email" => "Email",
             "Nr paragonu" => "Nr paragonu",
-            "Tekst" => "Tekst"
+            "Tekst" => "Tekst",
+            "Produkty" => "Produkty"
         ];
         $reviews = array_merge($reviews, $array);
 
 
         return Excel::download(new DailyWinnersExport($reviews), 'registers.xlsx');
     }
+
     public function getWinnersCsv()
     {
         $winnersDB = Register::whereNotNull('name')->get();
@@ -172,7 +175,7 @@ class DashboardController extends BaseController
 
             $array[] = array($id,
                 $ret->name, $ret->surname,
-                $ret->postal . ' ' . $ret->city . ' ' . $ret->street,$ret->phone,
+                $ret->postal . ' ' . $ret->city . ' ' . $ret->street, $ret->phone,
                 Carbon::parse($ret->created_at)->addHour()->format('Y-m-d H:i:s'), $ret->email, $ret->paragon, $ret->description);
 
             $i++;
