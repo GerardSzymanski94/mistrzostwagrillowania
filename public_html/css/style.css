@@ -181,10 +181,7 @@ nav {
 footer {
   bottom: 0;
   width: 100%;
-  position: absolute;
-  background-image: url("../images/general/bg-fotoer.jpg");
-  background-repeat: no-repeat;
-  background-size: cover; }
+  position: absolute; }
   @media only screen and (min-width: 992px) {
     footer {
       bottom: 0; } }
@@ -281,20 +278,30 @@ footer {
 .prices-img {
   max-height: 60vh; }
 
-@media only screen and (min-width: 1200px) {
-  #start .h-100 {
-    height: 100vh !important; } }
-#start .img-bg-left {
-  position: relative;
-  margin-top: 4em; }
-  @media only screen and (min-width: 992px) {
-    #start .img-bg-left {
-      max-height: 90vh;
-      position: absolute;
-      bottom: 32px;
-      left: 0; } }
-#start .img-prices {
-  max-width: 82%; }
+#start {
+  font-size: 22px; }
+  #start .img-bg-left {
+    position: static;
+    margin-top: 6em !important; }
+  @media only screen and (min-width: 1200px) {
+    #start {
+      font-size: 25px; }
+      #start .h-100 {
+        height: 100vh !important; }
+      #start .img-bg-left {
+        position: absolute;
+        max-height: 90vh;
+        top: 0;
+        left: 8vw;
+        margin-top: 0 !important; } }
+  #start .start-box p.text-left {
+    text-align: center !important; }
+  #start .products-home {
+    max-height: 70vh; }
+  #start .img-prices {
+    max-width: 82%; }
+  #start .icon-box img {
+    height: 75px; }
 
 #rules .img-bg-left {
   position: relative;
@@ -538,15 +545,18 @@ footer {
         font-size: 5vh; } }
 
 #registration {
-  margin-top: 15vh;
+  margin-top: 18vh;
   /* width */
   /* Track */
   /* Handle */
   /* Handle on hover */ }
   @media only screen and (min-width: 1200px) {
     #registration form {
-      height: 60vh;
-      overflow-y: scroll; } }
+      height: 70vh;
+      overflow-y: scroll;
+      overflow-x: hidden; } }
+  #registration h3 {
+    font-size: 3.1em; }
   @media only screen and (min-width: 1200px) {
     #registration {
       margin-top: 0; } }
@@ -563,13 +573,13 @@ footer {
       height: 100vh !important; } }
   #registration .img-bg-left {
     position: absolute;
-    bottom: 32px;
+    top: 32px;
     left: 0; }
   #registration form {
     padding-right: 0; }
     @media only screen and (min-width: 992px) {
       #registration form {
-        padding-right: 45px; } }
+        padding-right: 55px; } }
   #registration .registration-box {
     margin: 0 auto;
     max-width: 100%;
@@ -832,25 +842,27 @@ footer {
   #registration ::-webkit-scrollbar-thumb:hover {
     background: #af0811; }
 
+#prices h2 {
+  margin-top: 1.5em !important;
+  font-size: 5em; }
 @media only screen and (min-width: 1200px) {
-  #prices {
-    background: url("../images/general/price-bg.png") center center;
-    background-repeat: no-repeat;
-    background-size: contain;
-    overflow-x: hidden; }
-    #prices .h-100 {
-      height: 100vh !important; } }
-#prices .img-bg-left {
-  margin-top: 10vh;
-  max-height: 90vh; }
+  #prices .h-100 {
+    height: 100vh !important; } }
+#prices p.yellow {
+  font-size: 5em; }
+#prices h2 {
+  margin-top: 0.6em !important; }
+#prices p {
+  font-size: 1.2em; }
+  #prices p.align-self-end {
+    margin-bottom: 1.4em; }
 
 @media only screen and (min-width: 1200px) {
   #products .h-100 {
-    height: 100vh !important; } }
-#products .img-bg-left {
-  position: absolute;
-  bottom: 32px;
-  left: 0; }
+    background-repeat: no-repeat;
+    background-size: 100% 100%; } }
+#products h3 {
+  font-size: 3em; }
 #products h4 {
   line-height: 1;
   color: #fff; }
@@ -939,39 +951,20 @@ footer {
         max-height: 8.5185185185vh; } }
 #products .main-carousel {
   margin: 0 auto; }
+  #products .main-carousel img {
+    max-height: 37vh; }
   @media only screen and (min-width: 992px) {
     #products .main-carousel {
       margin-top: 0em; } }
-  #products .main-carousel .is-selected img {
-    transform: scale(1.3); }
-  @media only screen and (min-width: 1200px) {
-    #products .main-carousel {
-      max-width: 300px; } }
-  @media only screen and (min-width: 1200px) and (min-width: 1200px) {
-    #products .main-carousel {
-      max-width: calc(55.5555555556vw - 366.6666666667px); } }
-  @media only screen and (min-width: 1200px) and (min-width: 1920px) {
-    #products .main-carousel {
-      max-width: 700px; } }
-
   #products .main-carousel .carousel-cell {
-    width: 100%;
-    height: 50.9259259259vh;
-    display: flex;
-    align-items: flex-end; }
-    #products .main-carousel .carousel-cell img {
-      height: auto;
-      max-width: 100%;
-      border-radius: 10px;
-      max-height: 27.7777777778vh; }
-      @media only screen and (min-width: 992px) {
-        #products .main-carousel .carousel-cell img {
-          max-height: 27.7777777778vh; } }
-      @media only screen and (min-width: 1200px) {
-        #products .main-carousel .carousel-cell img {
-          max-height: 27.7777777778vh; } }
-      #products .main-carousel .carousel-cell img.long-img {
-        margin-bottom: -4.6296296296vh; }
+    width: calc( (100% - 20px) /  1 );
+    height: 360px; }
+    @media only screen and (min-width: 768px) {
+      #products .main-carousel .carousel-cell {
+        width: calc( (100% - 20px) /  3 ); } }
+    @media only screen and (min-width: 992px) {
+      #products .main-carousel .carousel-cell {
+        width: calc( (100% - 20px) /  5 ); } }
     #products .main-carousel .carousel-cell div .name {
       font-family: 'MyriadPro Cond';
       color: #fff;
@@ -980,7 +973,6 @@ footer {
       text-transform: uppercase;
       font-weight: 100;
       margin-top: 14px;
-      margin-left: 20px;
       font-weight: bold; }
       #products .main-carousel .carousel-cell div .name {
         font-size: 20px; }
@@ -1046,7 +1038,7 @@ footer {
       padding: 0;
       max-width: 900px; } }
 #contact h3 {
-  font-size: 2em; }
+  font-size: 3em; }
 #contact label {
   text-align: left;
   width: 100%;
@@ -1339,19 +1331,14 @@ h3 {
   position: relative;
   background: #d92026 url("../images/general/bg.jpg");
   background-repeat: no-repeat;
-  background-size: cover !important;
+  background-size: 100% 100% !important;
   overflow-x: hidden;
-  padding-bottom: 212px; }
-  @media only screen and (min-width: 992px) {
-    .video-wrap {
-      padding-bottom: 112px; } }
-  @media only screen and (min-width: 768px) {
-    .video-wrap {
-      padding-bottom: 162px; } }
+  padding-bottom: 55px; }
   @media only screen and (min-width: 1200px) {
     .video-wrap {
       overflow: hidden;
-      padding-bottom: 0; } }
+      padding-bottom: 0;
+      height: 100vh; } }
 
 form input {
   padding: 10px 20px;

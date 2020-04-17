@@ -36,40 +36,44 @@ class Form extends Model
         $array [] = '';
         $array [1] = "Heinz sos curry mango 220 ml";
 
-        $array [2] = "Heinz sos burgerowy 220 ml";
+        $array [2] = "HEINZ SOS CZOSNKOWY 220 ML";
 
-        $array [3] = "Heinz sos salsa chilli 220 ml";
+        $array [3] = "HEINZ KLASYCZNY SOS BARBECUE 220 ML";
 
-        $array [4] = "Heinz majonez 220 ml";
+        $array [4] = "HEINZ SOS BURGEROWY 220 ML";
 
-        $array [5] = "Heinz sos classic barbecue 220 ml";
+        $array [5] = "HEINZ SOS SALSA CHILLI 220 ML";
         $array [] = "";
 
-        $array [7] = "Heinz creationz fasola w stylu hiszpańskim 250 g";
+        $array [7] = "HEINZ SŁODKI SOS CHILLI 220 ML";
 
-        $array [8] = "Heinz creationz fasola w stylu włoskim 250 g";
+        $array [8] = "HEINZ MUSZTARDA MIODOWA 220 ML";
 
-        $array [9] = "Heinz fasolka barbecue 390 g";
+        $array [9] = "HEINZ MUSZTARDA ŁAGODNA 220 ML";
 
-        $array [10] = "Heinz fasolka chilli 390 g";
+        $array [10] = "HEINZ KETCHUP 50 % MNIEJ CUKRU I SOLI 400 ML";
 
-        $array [11] = "Heinz fasolka w sosie pomidorowym 415 g";
+        $array [11] = "HEINZ KETCHUP ŁAGODNY 450 ML";
 
-        $array [12] = "Heinz fasolka five beanz 415 g";
+        $array [12] = "HEINZ SOS CURRY MANGO 875 ML";
 
-        $array [13] = "Heinz sos classic barbecue 400 ml";
+        $array [13] = "HEINZ SOS FIRECRACKER 875 ML";
 
-        $array [14] = "Heinz sos sweet barbecue 400ml";
+        $array [14] = "HEINZ SOS CZOSNKOWY 875 ML";
 
-        $array [15] = "Heinz sos chilli barbecue 400 ml";
+        $array [15] = "HEINZ MUSZTARDA BARBECUE 875 ML";
 
-        $array [17] = "Heinz ketchup łagodny 450 g";
+        $array [16] = "HEINZ KETCHUP ŁAGODNY 875ml";
 
-        $array [18] = "Heinz ketchup łagodny 570 g";
+        $array [17] = "HEINZ FASOLKA BARBECUE 390 G";
 
-        $array [19] = "Heinz ketchup pikantny 570 g";
+        $array [18] = "HEINZ FASOLKA CHILLI 390 G";
 
-        $array [20] = "Heinz ketchup jalapeño chilli 570 g";
+        $array [19] = "HEINZ FIVE BEANZ: 5 RODZAJÓW FASOLKI W SOSIE POMIDORWYM 415 G";
+        $array [20] = "HEINZ CREATIONZ FASOLA W STYLU HISZPAŃSKIM 250 G";
+        $array [21] = "HEINZ CREATIONZ FASOLA W STYLU WŁOSKIM 250 G";
+        $array [22] = "HEINZ MAKARON W SOSIE SEROWYM 400 G";
+        $array [23] = "HEINZ KRĄŻKI MAKARONOWE W SOSIE POMIDOROWYM 400 G";
 
 
         foreach ($products as $key => $pr) {

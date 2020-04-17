@@ -55,7 +55,7 @@ class DashboardController extends BaseController
 
         $registers = Form::orderByDesc('created_at')->paginate(50);
 
-        return view('admin.registers', compact('registers', 'date'));
+        return view('admin.registers', compact('registers'));
 
     }
 
@@ -95,7 +95,7 @@ class DashboardController extends BaseController
 
         $registers = Register::orderByDesc('created_at')->paginate(50);
 
-        return view('admin.forms', compact('registers', 'date'));
+        return view('admin.forms', compact('registers'));
 
     }
 
@@ -109,7 +109,7 @@ class DashboardController extends BaseController
         return view('admin.data', compact('form'));
     }
 
-    public function winner(Register $form)
+    public function winner(Form $form)
     {
         $form->status = 1;
         $form->save();
@@ -119,7 +119,7 @@ class DashboardController extends BaseController
             $message->subject('Przyjęcie zgłoszenia do Ferie z Heinz.');
         });*/
 
-        return redirect()->back()->with('save', true);
+        return redirect()->route('admin.form', ['form'=>$form->id])->with('save', true);
     }
 
     public function mailtest()

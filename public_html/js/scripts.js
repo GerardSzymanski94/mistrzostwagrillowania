@@ -143,11 +143,10 @@
 
     $('.main-carousel').flickity({
         cellAlign: 'center',
-        contain: true,
+        // contain: true,
         wrapAround: true,
-        adaptiveHeight: true,
         pageDots: false,
-        wrapAround: true
+        draggable: true
     });
 
   $(".elements").hide();
@@ -170,6 +169,9 @@
       else{
           $('.navbar-toggler img').attr('src', 'images/general/home.png');
       }
+
+
+
   });
 
   $( "nav a:not(.regu)" ).click(function() {
@@ -211,15 +213,15 @@
         return false;
     }
 
-    var $carousel = $('.main-carousel');
-    $carousel.on( 'change.flickity', function( event, index ) {
+    $('.nav-link').on('click', function(){
+        if($(this).attr('data-show') === '#products'){
+            $('#video-wrap').css('background', 'url("images/general/bg-products.jpg")')
+        }
+        else{
+            $('#video-wrap').css('background', 'url("images/general/bg.jpg")')
+        }
+    })
 
-    if ($('.heinz-less-sugar').hasClass('is-selected')) {
-        $('.heinz-less-sugar img').attr('src','images/products/product-1-main.png');
-    }
-    else{
-        $('.heinz-less-sugar img').attr('src', 'images/products/product-1.png');
-    }
-    });
+    new WOW().init();
 
 })(jQuery); // End of use strict

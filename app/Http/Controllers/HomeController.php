@@ -6,6 +6,7 @@ use App\Models\Form;
 use App\Models\Register;
 use Carbon\Carbon;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Mail;
 
 class HomeController extends Controller
 {
@@ -55,16 +56,16 @@ class HomeController extends Controller
         $messa = $request->all();
 
 //        Mail::send('mails.body', ['messa' => $messa], function ($message) {
-//            $message->to('kontakt@grillzheinzem.pl', $name = null);
+//            $message->to('kontakt@promocjeheinz.pl', $name = null);
 //            $message->from('kontakt@grillzheinzem.pl', 'CRM NTS');
 //            $message->subject('Nowa wiadomość');
 //        });
-        /*
+
                 Mail::send('mails.body', ['messa' => $messa], function ($message) {
                     $message->to(env('MAIL_USERNAME'), $name = null);
                     $message->from(env('MAIL_USERNAME'), 'CRM Heinz3');
                     $message->subject('Nowa wiadomość');
-                });*/
+                });
 
         return redirect()->back()->with('contact', 'true');
 
