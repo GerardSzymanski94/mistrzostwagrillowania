@@ -70,10 +70,12 @@ class Form extends Model
         $array [18] = "HEINZ FASOLKA CHILLI 390 G";
 
         $array [19] = "HEINZ FIVE BEANZ: 5 RODZAJÓW FASOLKI W SOSIE POMIDORWYM 415 G";
-        $array [20] = "HEINZ CREATIONZ FASOLA W STYLU HISZPAŃSKIM 250 G";
-        $array [21] = "HEINZ CREATIONZ FASOLA W STYLU WŁOSKIM 250 G";
+       // $array [20] = "HEINZ CREATIONZ FASOLA W STYLU HISZPAŃSKIM 250 G";
+       // $array [21] = "HEINZ CREATIONZ FASOLA W STYLU WŁOSKIM 250 G";
         $array [22] = "HEINZ MAKARON W SOSIE SEROWYM 400 G";
         $array [23] = "HEINZ KRĄŻKI MAKARONOWE W SOSIE POMIDOROWYM 400 G";
+        $array [24] = "HEINZ KETCHUP PIKANTNY 570 G";
+        $array [25] = "HEINZ FASOLKA W SOSIE POMIDOROWYM 415 G";
 
 
         foreach ($products as $key => $pr) {

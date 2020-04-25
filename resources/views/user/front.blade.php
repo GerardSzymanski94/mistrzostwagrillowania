@@ -153,150 +153,152 @@
                                                         zakupiony
                                                         produkt
                                                         i zgłoś się do konkursu:</label>
-                                                                                                           <div class="d-inline-block product-list w-100 text-left wow slideInRight"
-                                                            data-wow-duration="2s" data-wow-delay="1.6s">
-                                                            <input type="checkbox" id="one" name="product[]" value="1">
-                                                            <label class="mt-2" for="one">
-                                                                <span></span>Heinz sos curry mango 220 ml
-                                                            </label>
+                                                    <div class="d-inline-block product-list w-100 text-left wow slideInRight"
+                                                         data-wow-duration="2s" data-wow-delay="1.6s">
+                                                        <input type="checkbox" id="one" name="product[]" value="1">
+                                                        <label class="mt-2" for="one">
+                                                            <span></span>Heinz sos curry mango 220 ml
+                                                        </label>
 
-                                                            <input type="checkbox" id="two" name="product[]" value="2">
-                                                            <label for="two">
-                                                                <span></span>HEINZ SOS CZOSNKOWY 220 ML
-                                                            </label>
+                                                        <input type="checkbox" id="two" name="product[]" value="2">
+                                                        <label for="two">
+                                                            <span></span>HEINZ SOS CZOSNKOWY 220 ML
+                                                        </label>
 
-                                                            <input type="checkbox" id="three" name="product[]"
-                                                                value="3">
-                                                            <label for="three">
-                                                                <span></span>HEINZ KLASYCZNY SOS BARBECUE 220 ML
-                                                            </label>
+                                                        <input type="checkbox" id="three" name="product[]"
+                                                               value="3">
+                                                        <label for="three">
+                                                            <span></span>HEINZ KLASYCZNY SOS BARBECUE 220 ML
+                                                        </label>
 
-                                                            <input type="checkbox" id="four" name="product[]" value="4">
-                                                            <label for="four">
-                                                                <span></span>HEINZ SOS BURGEROWY 220 ML
-                                                            </label>
+                                                        <input type="checkbox" id="four" name="product[]" value="4">
+                                                        <label for="four">
+                                                            <span></span>HEINZ SOS BURGEROWY 220 ML
+                                                        </label>
 
-                                                            <input type="checkbox" id="five" name="product[]" value="5">
-                                                            <label for="five">
-                                                                <span></span>HEINZ SOS SALSA CHILLI 220 ML
-                                                            </label>
+                                                        <input type="checkbox" id="five" name="product[]" value="5">
+                                                        <label for="five">
+                                                            <span></span>HEINZ SOS SALSA CHILLI 220 ML
+                                                        </label>
 
-                                                            <input type="checkbox" id="seven" name="product[]"
-                                                                value="7">
-                                                            <label for="seven">
-                                                                <span></span>HEINZ SŁODKI SOS CHILLI 220 ML
-                                                            </label>
+                                                        <input type="checkbox" id="seven" name="product[]"
+                                                               value="7">
+                                                        <label for="seven">
+                                                            <span></span>HEINZ SŁODKI SOS CHILLI 220 ML
+                                                        </label>
 
-                                                            <input type="checkbox" id="eight" name="product[]"
-                                                                value="8">
-                                                            <label for="eight">
-                                                                <span></span>HEINZ MUSZTARDA MIODOWA 220 ML
-                                                            </label>
+                                                        <input type="checkbox" id="eight" name="product[]"
+                                                               value="8">
+                                                        <label for="eight">
+                                                            <span></span>HEINZ MUSZTARDA MIODOWA 220 ML
+                                                        </label>
 
-                                                            <input type="checkbox" id="nine" name="product[]" value="9">
-                                                            <label for="nine">
-                                                                <span></span>HEINZ MUSZTARDA ŁAGODNA 220 ML
-                                                            </label>
+                                                        <input type="checkbox" id="nine" name="product[]" value="9">
+                                                        <label for="nine">
+                                                            <span></span>HEINZ MUSZTARDA ŁAGODNA 220 ML
+                                                        </label>
 
-                                                            <input type="checkbox" id="ten" name="product[]" value="10">
-                                                            <label for="ten">
-                                                                <span></span>HEINZ KETCHUP 50% MNIEJ CUKRU I SOLI 400 ML
-                                                            </label>
+                                                        <input type="checkbox" id="ten" name="product[]" value="10">
+                                                        <label for="ten">
+                                                            <span></span>HEINZ KETCHUP 50% MNIEJ CUKRU I SOLI 400 ML
+                                                        </label>
 
-                                                            <input type="checkbox" id="eleven" name="product[]"
-                                                                value="11">
-                                                            <label for="eleven">
-                                                                <span></span>HEINZ KETCHUP ŁAGODNY 450 ML
-                                                            </label>
-															
-															<input type="checkbox" id="twentyfour" name="product[]"
-                                                                value="24">
-                                                            <label for="24">
-                                                                <span></span>HEINZ KETCHUP PIKANTNY 570 G
-                                                            </label>
+                                                        <input type="checkbox" id="eleven" name="product[]"
+                                                               value="11">
+                                                        <label for="eleven">
+                                                            <span></span>HEINZ KETCHUP ŁAGODNY 450 ML
+                                                        </label>
 
-                                                            <input type="checkbox" id="twelve" name="product[]"
-                                                                value="12">
-                                                            <label for="twelve">
-                                                                <span></span>HEINZ SOS CURRY MANGO 875 ML
-                                                            </label>
+                                                        <input type="checkbox" id="twentyfour" name="product[]"
+                                                               value="24">
+                                                        <label for="twentyfour">
+                                                            <span></span>HEINZ KETCHUP PIKANTNY 570 G
+                                                        </label>
 
-                                                            <input type="checkbox" id="thirteen" name="product[]"
-                                                                value="13">
-                                                            <label for="thirteen">
-                                                                <span></span>HEINZ SOS FIRECRACKER 875 ML
-                                                            </label>
+                                                        <input type="checkbox" id="twelve" name="product[]"
+                                                               value="12">
+                                                        <label for="twelve">
+                                                            <span></span>HEINZ SOS CURRY MANGO 875 ML
+                                                        </label>
 
-                                                            <input type="checkbox" id="fourteen" name="product[]"
-                                                                value="14">
-                                                            <label for="fourteen">
-                                                                <span></span>HEINZ SOS CZOSNKOWY 875 ML
-                                                            </label>
+                                                        <input type="checkbox" id="thirteen" name="product[]"
+                                                               value="13">
+                                                        <label for="thirteen">
+                                                            <span></span>HEINZ SOS FIRECRACKER 875 ML
+                                                        </label>
 
-                                                            <input type="checkbox" id="fifteen" name="product[]"
-                                                                value="15">
-                                                            <label for="fifteen">
-                                                                <span></span>HEINZ MUSZTARDA BARBECUE 875 ML
-                                                            </label>
-                                                            <input type="checkbox" id="sixteen" name="product[]"
-                                                                value="16">
-                                                            <label for="sixteen">
-                                                                <span></span>HEINZ KETCHUP ŁAGODNY 875 ML
-                                                            </label>
+                                                        <input type="checkbox" id="fourteen" name="product[]"
+                                                               value="14">
+                                                        <label for="fourteen">
+                                                            <span></span>HEINZ SOS CZOSNKOWY 875 ML
+                                                        </label>
 
-                                                            <input type="checkbox" id="seventeen" name="product[]"
-                                                                value="17">
-                                                            <label for="seventeen">
-                                                                <span></span>HEINZ FASOLKA BARBECUE 390 G
-                                                            </label>
+                                                        <input type="checkbox" id="fifteen" name="product[]"
+                                                               value="15">
+                                                        <label for="fifteen">
+                                                            <span></span>HEINZ MUSZTARDA BARBECUE 875 ML
+                                                        </label>
+                                                        <input type="checkbox" id="sixteen" name="product[]"
+                                                               value="16">
+                                                        <label for="sixteen">
+                                                            <span></span>HEINZ KETCHUP ŁAGODNY 875 ML
+                                                        </label>
 
-                                                            <input type="checkbox" id="eighteen" name="product[]"
-                                                                value="18">
-                                                            <label for="eighteen">
-                                                                <span></span>HEINZ FASOLKA CHILLI 390 G
-                                                            </label>
-															
-                                                            <input type="checkbox" id="twentyfour" name="product[]"
-                                                                value="24">
-                                                            <label for="twentyfour">
-                                                                <span></span>HEINZ FASOLKa W
-                                                                SOSIE POMIDOROWYM 415 G
-                                                            </label>
+                                                        <input type="checkbox" id="seventeen" name="product[]"
+                                                               value="17">
+                                                        <label for="seventeen">
+                                                            <span></span>HEINZ FASOLKA BARBECUE 390 G
+                                                        </label>
 
-                                                            <input type="checkbox" id="nineteen" name="product[]"
-                                                                value="19">
-                                                            <label for="nineteen">
-                                                                <span></span>HEINZ FIVE BEANZ: 5 RODZAJÓW FASOLKI W SOSIE POMIDOROWYM 415 G
-                                                            </label>
+                                                        <input type="checkbox" id="eighteen" name="product[]"
+                                                               value="18">
+                                                        <label for="eighteen">
+                                                            <span></span>HEINZ FASOLKA CHILLI 390 G
+                                                        </label>
 
-                                                            <input type="checkbox" id="twentytwo" name="product[]"
-                                                                value="22">
-                                                            <label for="twentytwo">
-                                                                <span></span>HEINZ MAKARON W SOSIE SEROWYM 400 G
-                                                            </label>
+                                                        <input type="checkbox" id="twentyfive" name="product[]"
+                                                               value="25">
+                                                        <label for="twentyfive">
+                                                            <span></span>HEINZ FASOLKa W
+                                                            SOSIE POMIDOROWYM 415 G
+                                                        </label>
 
-                                                            <input type="checkbox" id="twentythree" name="product[]"
-                                                                value="23">
-                                                            <label for="twentythree">
-                                                                <span></span>HEINZ KRĄŻKI MAKARONOWE W SOSIE POMIDOROWYM
-                                                                400 G
-                                                            </label>
+                                                        <input type="checkbox" id="nineteen" name="product[]"
+                                                               value="19">
+                                                        <label for="nineteen">
+                                                            <span></span>HEINZ FIVE BEANZ: 5 RODZAJÓW FASOLKI W SOSIE
+                                                            POMIDOROWYM 415 G
+                                                        </label>
 
-                                                        </div>
+                                                        <input type="checkbox" id="twentytwo" name="product[]"
+                                                               value="22">
+                                                        <label for="twentytwo">
+                                                            <span></span>HEINZ MAKARON W SOSIE SEROWYM 400 G
+                                                        </label>
+
+                                                        <input type="checkbox" id="twentythree" name="product[]"
+                                                               value="23">
+                                                        <label for="twentythree">
+                                                            <span></span>HEINZ KRĄŻKI MAKARONOWE W SOSIE POMIDOROWYM
+                                                            400 G
+                                                        </label>
+
+                                                    </div>
                                                     <div class="d-flex wow slideInRight" data-wow-duration="2s"
                                                          data-wow-delay="1.6s">
                                                         <div class="group mt-2">
                                                             <input name="rule1" required type="checkbox" id="regu"
                                                                    class="check">
-                                                                <label for="regu">
-                                                                    ”Zapoznałem/zapoznałam się z
-                                                                    <a href="pdf/HEINZ_regulamin.pdf"
-                                                                        target="_blank">Regulaminem</a>  i akceptuję wszystkie zawarte w nim
-                                                                    warunki, w tym potwierdzam, iż znane są mi
-                                                                    informacje dotyczące przetwarzania moich danych
-                                                                    osobowych, o których mowa w Rozdziale 6.
-                                                                    Regulaminu.”
-                                                                </label>
+                                                            <label for="regu">
+                                                                ”Zapoznałem/zapoznałam się z
+                                                                <a href="pdf/HEINZ_regulamin.pdf"
+                                                                   target="_blank">Regulaminem</a> i akceptuję wszystkie
+                                                                zawarte w nim
+                                                                warunki, w tym potwierdzam, iż znane są mi
+                                                                informacje dotyczące przetwarzania moich danych
+                                                                osobowych, o których mowa w Rozdziale 6.
+                                                                Regulaminu.”
+                                                            </label>
                                                         </div>
                                                     </div>
                                                     <div class="boxes-row justify-content-between w-100 mt-2 mb-4 wow slideInRight"
@@ -427,7 +429,7 @@
                                             <span class="yellow">450 ml</span></p>
                                     </div>
                                 </div>
-								<div class="carousel-cell col-lg-3 col-12">
+                                <div class="carousel-cell col-lg-3 col-12">
                                     <div class="">
                                         <img class="img-fluid"
                                              src="images/products/Heinz-ketchup-pikantny-450-g.png">
@@ -496,15 +498,15 @@
                                             <span class="yellow">390 g</span></p>
                                     </div>
                                 </div>
-                                    <div class="carousel-cell col-lg-3 col-12">
-                                        <div class="">
-                                            <img class="img-fluid"
-                                                src="images/products/fasolka-w-sosie-pomidorowym-415g.png">
-                                            <p class="name">Heinz fasolka<br />
-                                                w sosie pomidorowym<br>
-                                                <span class="yellow">415 g</span></p>
-                                        </div>
+                                <div class="carousel-cell col-lg-3 col-12">
+                                    <div class="">
+                                        <img class="img-fluid"
+                                             src="images/products/fasolka-w-sosie-pomidorowym-415g.png">
+                                        <p class="name">Heinz fasolka<br/>
+                                            w sosie pomidorowym<br>
+                                            <span class="yellow">415 g</span></p>
                                     </div>
+                                </div>
                                 <div class="carousel-cell col-lg-3 col-12">
                                     <div class="">
                                         <img class="img-fluid"
@@ -531,7 +533,7 @@
                                             <span class="yellow">400 g</span></p>
                                     </div>
                                 </div>
-								<div class="carousel-cell col-lg-3 col-12">
+                                <div class="carousel-cell col-lg-3 col-12">
                                     <div class="">
                                         <img class="img-fluid"
                                              src="images/products/Heinz-sos-curry-mango-220-ml.png">
@@ -566,9 +568,9 @@
             <div id="contact" class="text-center elements">
                 <div class="h-100">
                     <div class="row h-100">
-                            <img class="img-fluid img-bg-left mb-lg-0 mb-4 mt-2"
-                                src="images/general/mistrzostwo-girllowania-logo.png" />
-                            <div class="col-lg-6 d-lg-block col-12"></div>
+                        <img class="img-fluid img-bg-left mb-lg-0 mb-4 mt-2"
+                             src="images/general/mistrzostwo-girllowania-logo.png"/>
+                        <div class="col-lg-6 d-lg-block col-12"></div>
                         <div class="col-lg-6 col-12 d-flex flex-column justify-content-center">
                             <div class="contact-box">
 
