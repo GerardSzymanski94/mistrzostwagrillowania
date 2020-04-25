@@ -283,6 +283,8 @@ footer {
   #start .img-bg-left {
     position: static;
     margin-top: 6em !important; }
+  #start .start-box p.text-left {
+    text-align: center !important; }
   @media only screen and (min-width: 1200px) {
     #start {
       font-size: 25px; }
@@ -292,10 +294,10 @@ footer {
         position: absolute;
         max-height: 90vh;
         top: 0;
-        left: 8vw;
-        margin-top: 0 !important; } }
-  #start .start-box p.text-left {
-    text-align: center !important; }
+        left: 7vw;
+        margin-top: 0 !important; }
+      #start .start-box p.text-left {
+        text-align: left !important; } }
   #start .products-home {
     max-height: 70vh; }
   #start .img-prices {
@@ -774,6 +776,8 @@ footer {
 
   #registration .boxes-row {
     display: flex;
+    -webkit-flex-display: flex;
+    -ms-flex-display: flex;
     justify-content: space-between;
     flex-wrap: wrap;
     -ms-flex-wrap: wrap;
@@ -788,9 +792,16 @@ footer {
       background: #faed23;
       box-shadow: 6px 7px rgba(128, 26, 31, 0.7);
       line-height: 1;
-      display: inline-flex;
       transition: 0.5s all;
-      font-size: 2.5vh; }
+      font-size: 20px;
+      display: block;
+      text-align: center;
+      width: 100%; }
+      @media only screen and (min-width: 768px) {
+        #registration .boxes-row .btn-item {
+          display: inline-flex;
+          width: auto;
+          font-size: 24px; } }
       #registration .boxes-row .btn-item:hover {
         background: #fff;
         border: solid 2px #fff;
@@ -814,8 +825,9 @@ footer {
       opacity: 0;
       position: absolute; }
     #registration .product-list label > span {
-      width: 15px;
-      height: 15px;
+      min-width: 20px;
+      height: 20px;
+      position: relative;
       display: flex;
       justify-content: center;
       border: 2px solid #af0811;
@@ -823,11 +835,15 @@ footer {
       border-radius: 0;
       background: #af0811;
       transition: all .3s; }
+      @media only screen and (min-width: 1200px) {
+        #registration .product-list label > span {
+          min-width: 15px;
+          height: 15px; } }
     #registration .product-list input:checked + label > span::before {
       content: 'X';
       position: absolute;
-      top: 0px;
-      left: 18px;
+      top: -5px;
+      left: 0px;
       color: #fbce07;
       font-weight: 100;
       font-size: 1em; }
@@ -847,11 +863,11 @@ footer {
   font-size: 5em; }
 @media only screen and (min-width: 1200px) {
   #prices .h-100 {
-    height: 100vh !important; } }
+    height: 100vh !important; }
+  #prices h2 {
+    margin-top: 0.6em !important; } }
 #prices p.yellow {
   font-size: 5em; }
-#prices h2 {
-  margin-top: 0.6em !important; }
 #prices p {
   font-size: 1.2em; }
   #prices p.align-self-end {
@@ -952,6 +968,7 @@ footer {
 #products .main-carousel {
   margin: 0 auto; }
   #products .main-carousel img {
+    min-height: 37vh;
     max-height: 37vh; }
   @media only screen and (min-width: 992px) {
     #products .main-carousel {
@@ -1003,13 +1020,18 @@ footer {
         height: 70px;
         width: 70px;
         top: 40%; } }
+    #products .main-carousel .flickity-prev-next-button .flickity-button-icon {
+      left: 15px; }
+      @media only screen and (min-width: 1200px) {
+        #products .main-carousel .flickity-prev-next-button .flickity-button-icon {
+          left: -1em; } }
     #products .main-carousel .flickity-prev-next-button svg {
       height: 100%; }
     #products .main-carousel .flickity-prev-next-button.previous {
       left: 0; }
       @media only screen and (min-width: 1200px) {
         #products .main-carousel .flickity-prev-next-button.previous {
-          left: -3vw; } }
+          left: 1em; } }
     #products .main-carousel .flickity-prev-next-button.next {
       right: 0; }
       @media only screen and (min-width: 1200px) {
@@ -1026,10 +1048,11 @@ footer {
   margin-top: 4em; }
   @media only screen and (min-width: 992px) {
     #contact .img-bg-left {
-      max-height: 90vh;
       position: absolute;
-      bottom: 32px;
-      left: 0; } }
+      max-height: 90vh;
+      top: 0;
+      left: 7vw;
+      margin-top: 0 !important; } }
 #contact .contact-box {
   margin: 0 auto;
   padding: 0 20px; }
@@ -1092,6 +1115,8 @@ footer {
       margin-right: 35px; } }
 #contact .boxes-row {
   display: flex;
+  -webkit-flex-display: flex;
+  -ms-flex-display: flex;
   justify-content: center;
   flex-wrap: wrap;
   -ms-flex-wrap: wrap;
