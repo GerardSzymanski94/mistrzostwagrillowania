@@ -6,15 +6,19 @@ use App\Models\Form;
 use App\Models\Register;
 use Carbon\Carbon;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\File;
+use Illuminate\Support\Facades\Input;
 use Illuminate\Support\Facades\Mail;
+use Illuminate\Support\Str;
 
 class HomeController extends Controller
 {
     public function index()
     {
+
         $date = Carbon::now();
         $date->addHour()->addHour();
-        if ($date->format('Y-m-d') == "2020-01-19") {
+        if ($date->format('Y-m-d') == "2020-04-25" || $date->format('Y-m-d') == "2020-04-26") {
 
             return response()->view('user.blank');
         }
@@ -61,11 +65,11 @@ class HomeController extends Controller
 //            $message->subject('Nowa wiadomość');
 //        });
 
-                Mail::send('mails.body', ['messa' => $messa], function ($message) {
-                    $message->to(env('MAIL_USERNAME'), $name = null);
-                    $message->from(env('MAIL_USERNAME'), 'CRM Heinz3');
-                    $message->subject('Nowa wiadomość');
-                });
+        Mail::send('mails.body', ['messa' => $messa], function ($message) {
+            $message->to(env('MAIL_USERNAME'), $name = null);
+            $message->from(env('MAIL_USERNAME'), 'CRM Heinz3');
+            $message->subject('Nowa wiadomość');
+        });
 
         return redirect()->back()->with('contact', 'true');
 
@@ -83,15 +87,19 @@ class HomeController extends Controller
         $form->email = $request->input('email');
         $form->postal = $request->input('postal');
         $form->status = 1;
+
         if ($request->has('street_number2')) {
             $form->street = $request->input('street') . " " . $request->input('street_number') . "/" . $request->input('street_number2');
         } else {
             $form->street = $request->input('street') . " " . $request->input('street_number');
         }
-
+        $form->save();
         if ($request->hasFile('paragon')) {
-            $photo = $request->file('paragon')->store('bill/' . $form->id . '/');
-            $form->paragonimg = $photo;
+            $name = Str::random(12);
+            // $photo = $request->file('paragon')->storePublicly('bill/' . $form->id . '/');
+            $ext = $request->file('paragon')->extension();
+            $photo = File::put(public_path('bill/' . $name . '.' . $ext), $request->file('paragon'));
+            $form->paragonimg = $name . '.' . $ext;
         }
 
         $form->save();
@@ -118,7 +126,44 @@ class HomeController extends Controller
         }
 
         if ($request->hasFile('paragon')) {
-            $photo = $request->file('paragon')->store('bill/' . $form->id . '/');
+            $name = Str::random(12);
+
+            $ext = $request->file('paragon')->extension();
+            $photo = $request->file('paragon')->store('/bill/', ['disk' => 'public_uploads']);
+            //  $photo = File::put(public_path('bill/' . $name . '.' . $ext), $request->file('paragon'));
+
+            $form->paragonimg = $photo;
+        }
+
+        $form->save();
+        return redirect()->back()->with('formSaved', true);
+    }
+
+    public function confirmFormSave3(Request $request)
+    {
+        //$form = Form::where('token', $token);
+
+        $form = new Register();
+        $form->name = $request->input('name');
+        $form->surname = $request->input('surname');
+        $form->city = $request->input('city');
+        $form->phone = $request->input('phone');
+        $form->email = $request->input('email');
+        $form->postal = $request->input('postal');
+        $form->status = 3;
+        if ($request->has('street_number2')) {
+            $form->street = $request->input('street') . " " . $request->input('street_number') . "/" . $request->input('street_number2');
+        } else {
+            $form->street = $request->input('street') . " " . $request->input('street_number');
+        }
+
+        if ($request->hasFile('paragon')) {
+            $name = Str::random(12);
+
+            $ext = $request->file('paragon')->extension();
+            $photo = $request->file('paragon')->store('/bill/', ['disk' => 'public_uploads']);
+            //  $photo = File::put(public_path('bill/' . $name . '.' . $ext), $request->file('paragon'));
+
             $form->paragonimg = $photo;
         }
 
@@ -134,5 +179,10 @@ class HomeController extends Controller
     public function showForm2()
     {
         return view('user.form2');
+    }
+
+    public function showForm3()
+    {
+        return view('user.form3');
     }
 }

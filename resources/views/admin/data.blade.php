@@ -14,9 +14,9 @@
     <p>{{ $form->street }}</p>
     <br>
 
-    <img src="{{ asset('storage/'. $form->paragonimg) }}" height="100px" width="100px" data-action="zoom">
+    <img src="{{ public_path().'/'. $form->paragonimg }}" height="100px" width="100px" data-action="zoom">
     <br>
-  {{--  <a class="btn btn-success" href="{{ route('admin.dashboard.confirmUser', ['user'=>$form->id]) }}">Potwierdź wygraną</a>--}}
+    {{--  <a class="btn btn-success" href="{{ route('admin.dashboard.confirmUser', ['user'=>$form->id]) }}">Potwierdź wygraną</a>--}}
 
     <style>
         img[data-action="zoom"] {
@@ -24,6 +24,7 @@
             cursor: -webkit-zoom-in;
             cursor: -moz-zoom-in;
         }
+
         .zoom-img,
         .zoom-img-wrap {
             position: relative;
@@ -32,11 +33,13 @@
             -o-transition: all 300ms;
             transition: all 300ms;
         }
+
         img.zoom-img {
             cursor: pointer;
             cursor: -webkit-zoom-out;
             cursor: -moz-zoom-out;
         }
+
         .zoom-overlay {
             z-index: 420;
             background: #fff;
@@ -48,14 +51,16 @@
             pointer-events: none;
             filter: "alpha(opacity=0)";
             opacity: 0;
-            -webkit-transition:      opacity 300ms;
-            -o-transition:      opacity 300ms;
-            transition:      opacity 300ms;
+            -webkit-transition: opacity 300ms;
+            -o-transition: opacity 300ms;
+            transition: opacity 300ms;
         }
+
         .zoom-overlay-open .zoom-overlay {
             filter: "alpha(opacity=100)";
             opacity: 1;
         }
+
         .zoom-overlay-open,
         .zoom-overlay-transitioning {
             cursor: default;
