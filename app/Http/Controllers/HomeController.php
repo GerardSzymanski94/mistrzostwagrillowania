@@ -95,13 +95,9 @@ class HomeController extends Controller
         }
         $form->save();
         if ($request->hasFile('paragon')) {
-            $name = Str::random(12);
-            // $photo = $request->file('paragon')->storePublicly('bill/' . $form->id . '/');
-            $ext = $request->file('paragon')->extension();
-            $photo = File::put(public_path('bill/' . $name . '.' . $ext), $request->file('paragon'));
-            $form->paragonimg = $name . '.' . $ext;
+            $photo = $request->file('paragon')->store('/bill/' . $form->id . '/');
+            $form->paragonimg = $photo;
         }
-
         $form->save();
         return redirect()->back()->with('formSaved', true);
 
@@ -126,12 +122,7 @@ class HomeController extends Controller
         }
 
         if ($request->hasFile('paragon')) {
-            $name = Str::random(12);
-
-            $ext = $request->file('paragon')->extension();
-            $photo = $request->file('paragon')->store('/bill/', ['disk' => 'public_uploads']);
-            //  $photo = File::put(public_path('bill/' . $name . '.' . $ext), $request->file('paragon'));
-
+            $photo = $request->file('paragon')->store('/bill/' . $form->id . '/');
             $form->paragonimg = $photo;
         }
 
@@ -146,24 +137,14 @@ class HomeController extends Controller
         $form = new Register();
         $form->name = $request->input('name');
         $form->surname = $request->input('surname');
-        $form->city = $request->input('city');
-        $form->phone = $request->input('phone');
+        //   $form->city = $request->input('city');
+        // $form->phone = $request->input('phone');
         $form->email = $request->input('email');
-        $form->postal = $request->input('postal');
+        //  $form->postal = $request->input('postal');
         $form->status = 3;
-        if ($request->has('street_number2')) {
-            $form->street = $request->input('street') . " " . $request->input('street_number') . "/" . $request->input('street_number2');
-        } else {
-            $form->street = $request->input('street') . " " . $request->input('street_number');
-        }
 
         if ($request->hasFile('paragon')) {
-            $name = Str::random(12);
-
-            $ext = $request->file('paragon')->extension();
-            $photo = $request->file('paragon')->store('/bill/', ['disk' => 'public_uploads']);
-            //  $photo = File::put(public_path('bill/' . $name . '.' . $ext), $request->file('paragon'));
-
+            $photo = $request->file('paragon')->store('/bill/' . $form->id . '/');
             $form->paragonimg = $photo;
         }
 

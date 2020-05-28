@@ -14,7 +14,7 @@
     <p>{{ $form->street }}</p>
     <br>
 
-    <img src="{{ public_path().'/'. $form->paragonimg }}" height="100px" width="100px" data-action="zoom">
+    <img src="{{ asset('/storage4/'. $form->paragonimg) }}" height="100px" width="100px" data-action="zoom">
     <br>
     {{--  <a class="btn btn-success" href="{{ route('admin.dashboard.confirmUser', ['user'=>$form->id]) }}">Potwierdź wygraną</a>--}}
 

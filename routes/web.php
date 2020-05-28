@@ -20,6 +20,7 @@ Route::post('/saveform', 'HomeController@saveform')->name('saveform');
 Route::post('/contactform', 'HomeController@contactform')->name('contactform');
 Route::post('/confirmform1', 'HomeController@confirmFormSave')->name('confirmform');
 Route::post('/confirmform2', 'HomeController@confirmFormSave2')->name('confirmform2');
+Route::post('/confirmform3', 'HomeController@confirmFormSave3')->name('confirmform3');
 
 Route::namespace('Admin')->name('admin.')->prefix('administracja')->group(function () {
 

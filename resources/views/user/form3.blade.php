@@ -48,7 +48,7 @@
                                     <div class="col"></div>
                                 </div>
 
-                                <form action="{{ route('confirmform') }}" method="post" enctype="multipart/form-data">
+                                <form action="{{ route('confirmform3') }}" method="post" enctype="multipart/form-data">
                                     @csrf
                                     <div class="row">
                                         <div class="col-lg-6 col-sm-12">
@@ -80,19 +80,7 @@
                                     </div>
 
                                     <div class="row">
-                                        <div class="col-lg-3 col-sm-12">
-                                            <div class="form-group regi-paragon text-left">
-                                                <label class="pl-2">NR TELEFONU</label>
-                                                <input name="phone" type="text" class="form-control"
-                                                       placeholder="NR TELEFONU" required style="margin-bottom: 0"
-                                                       value="{{ old('phone') }}">
-                                                @if($errors->has('phone'))
-                                                    <div class="invalid-feedback" style="color: yellow; display: block">
-                                                        {{ $errors->first('phone') }}
-                                                    </div>
-                                                @endif
-                                            </div>
-                                        </div>
+
                                         <div class="col-lg-4 col-sm-12">
                                             <div class="form-group regi-paragon text-left">
                                                 <label class="pl-2">ADRES E-MAIL ZGŁOSZENIA</label>
