@@ -32,7 +32,7 @@ class HomeController extends Controller
         //  $form = Form::create($data);
 
         $products = implode(',', $request->product);
-        Form::create([
+        Form::on('mysql2')->create([
             'email' => $request->email,
             'paragon' => $request->bill,
             'description' => $request->description,
@@ -80,6 +80,7 @@ class HomeController extends Controller
         //$form = Form::where('token', $token);
 
         $form = new Register();
+        $form->setConnection('mysql2');
         $form->name = $request->input('name');
         $form->surname = $request->input('surname');
         $form->city = $request->input('city');
@@ -108,6 +109,7 @@ class HomeController extends Controller
         //$form = Form::where('token', $token);
 
         $form = new Register();
+        $form->setConnection('mysql2');
         $form->name = $request->input('name');
         $form->surname = $request->input('surname');
         $form->city = $request->input('city');
@@ -135,6 +137,7 @@ class HomeController extends Controller
         //$form = Form::where('token', $token);
 
         $form = new Register();
+        $form->setConnection('mysql2');
         $form->name = $request->input('name');
         $form->surname = $request->input('surname');
         //   $form->city = $request->input('city');

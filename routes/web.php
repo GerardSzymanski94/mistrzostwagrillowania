@@ -43,4 +43,25 @@ Route::namespace('Admin')->name('admin.')->prefix('administracja')->group(functi
     Route::get('login', 'LoginController@index')->name('login');
 
 });
+Route::namespace('Admin')->name('admin2.')->prefix('administracja2')->group(function () {
+
+    Route::get('/', 'Dashboard2Controller@registers')->name('index');
+    Route::get('/form/{form}', 'Dashboard2Controller@form')->name('form');
+    Route::get('/forms', 'Dashboard2Controller@forms')->name('forms');
+    Route::get('/data/{form}', 'Dashboard2Controller@data')->name('data');
+    Route::get('/winner/{form}', 'Dashboard2Controller@winner')->name('winner');
+    Route::get('/confirm/{form}', 'Dashboard2Controller@confirm')->name('confirm');
+    Route::get('/mailtest', 'Dashboard2Controller@mailtest')->name('mailtest');
+    Route::get('/getcsv', 'Dashboard2Controller@getCsv')->name('getcsv');
+    Route::get('/getwinnerscsv', 'Dashboard2Controller@getWinnersCsv')->name('getwinnerscsv');
+    Route::prefix('dashboard')->name('dashboard.')->group(function () {
+        //  Route::get('/', 'DashboardController@days')->name('days');
+        //   Route::get('/days', 'DashboardController@days')->name('days');
+        //Route::get('/registers/{date}', 'DashboardController@registers')->name('registers');
+    });
+
+
+    Route::get('login', 'LoginController@index')->name('login');
+
+});
 Auth::routes();

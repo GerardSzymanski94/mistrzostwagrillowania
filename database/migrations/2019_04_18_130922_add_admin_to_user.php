@@ -13,7 +13,7 @@ class AddAdminToUser extends Migration
      */
     public function up()
     {
-        Schema::table('users', function (Blueprint $table) {
+        Schema::connection('mysql2')->table('users', function (Blueprint $table) {
             $table->boolean('admin')->after('id')->default(false);
         });
     }
